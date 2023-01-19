@@ -1,60 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using TestClassLibrary;
+using System.Linq;
+using System.Threading;
 
-namespace TestConsoleApp
+public class Program
 {
-    internal class Program
+
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        var n = Console.ReadLine();
+        var balls = Console.ReadLine().Split().ToList();
+        var result = new List<string>();
+        var cnt = 0;
+        for (int i = 1; i < balls.Count; i++)
         {
-            Console.WriteLine("Проверка существования треугольника;");
-            Console.WriteLine("Вычисление его периметра и площади;");
-            Console.WriteLine("Сохранение треугольника и вывод его параметров;");
-
-            var triangle = new Triangle(0, 0, 0);
-            Console.Write("Введите сторону а = ");
-            triangle.a = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Введите сторону b = ");
-            triangle.b = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Введите сторону c = ");
-            triangle.c = Convert.ToDouble(Console.ReadLine());
-
-            var jsonListTriangle = new List<Triangle>();
-
-            string path = "test.json";            
-            if (File.Exists(path))
+            if (balls[i] == balls[i - 1])
             {
-                jsonListTriangle = FileProvider.Read(path);
-                File.Delete(path);
+                cnt++;
             }
-            jsonListTriangle.Add(triangle);
-            
+        }
 
-            if (Triangle.IsExists(triangle, out double p, out double s))
-            {
-                Console.WriteLine("Периметр треугольника = " + p);
-                Console.WriteLine("Площадь треугольника = " + s);
 
-                FileProvider.Save("test.json", jsonListTriangle);
-            }
-            else
-            {
-                Console.WriteLine("Треугольника не сущетвует");
-            }                           
-
-            Console.WriteLine("Сохраненные треугольники:");
-            int n = 1;
-            foreach (var side in jsonListTriangle)
-            {
-                Console.WriteLine("Треугольник" + " " + n + ":");
-                Console.WriteLine("a = " + side.a + ", b = " + side.b + ", c = " + side.c);
-                n++;
-            }
-            Console.WriteLine("Нажмите что-нибудь для выхода");
-            Console.ReadLine();
-        }        
     }
+
+    while (в balls есть более 2-х подряд)
+    {
+    for (int i = 1; i < balls.Count; i++)
+        {
+        if(в balls есть более 2-х подряд)
+            {
+        result.Add(одинаковые);
+        balls.Remove(одинаковые);
+        }
+    }
+    Console.WriteLine(result.Count());
+
+
 }
+
 
