@@ -256,5 +256,21 @@ namespace _2048WindowsFormsApp
             GenerateNumber();
             ShowScore();
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void рестартToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void правилаИгрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gameRules = new RulesForm();
+            gameRules.ShowDialog();
+        }
     }
 }
