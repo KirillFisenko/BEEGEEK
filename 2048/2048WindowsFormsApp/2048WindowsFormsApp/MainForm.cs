@@ -9,7 +9,9 @@ namespace _2048WindowsFormsApp
         private Label[,] labelsMap;
         private const int mapSize = 4;
         private static Random random = new Random();
+        private static Random randomIndex = new Random();
         private int score = 0;
+        private string[] newLabelNumber = new string[] { "2", "4" };
 
         public MainForm()
         {
@@ -52,10 +54,9 @@ namespace _2048WindowsFormsApp
                 var indexColumn = randomNumberLabel % mapSize;
                 if (labelsMap[indexRow, indexColumn].Text == String.Empty)
                 {
-                    //сделать рандомно 2 или 4
-                    labelsMap[indexRow, indexColumn].Text = "2";
-                }
-                break;
+                    labelsMap[indexRow, indexColumn].Text = newLabelNumber[randomIndex.Next(newLabelNumber.Length)];
+                    break;
+                }                
             }
         }
 
@@ -249,7 +250,7 @@ namespace _2048WindowsFormsApp
                             }
                         }
                     }
-                } 
+                }
             }
 
             GenerateNumber();
