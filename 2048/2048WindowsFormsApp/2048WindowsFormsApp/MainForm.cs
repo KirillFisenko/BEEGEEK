@@ -11,7 +11,7 @@ namespace _2048WindowsFormsApp
         private static Random random = new Random();
         private static Random randomIndex = new Random();
         private int score = 0;
-        private string[] newLabelNumber = new string[] { "2", "4" };
+        private string[] newLabelNumber = new string[] { "2", "2", "2", "4" };
 
         public MainForm()
         {
