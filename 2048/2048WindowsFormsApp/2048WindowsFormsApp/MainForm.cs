@@ -92,7 +92,8 @@ namespace _2048WindowsFormsApp
         {
             Label label = new Label();
             label.BackColor = Color.Silver;
-            label.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
+            label.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
+            label.ForeColor = Color.SlateGray;
             label.Size = new Size(70, 70);
             label.Text = String.Empty;
             label.TextAlign = ContentAlignment.MiddleCenter;
