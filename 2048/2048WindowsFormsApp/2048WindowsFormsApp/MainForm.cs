@@ -9,7 +9,7 @@ namespace _2048WindowsFormsApp
         private Label[,] labelsMap;
         private static int mapSize = 4;
         private static Random random = new Random();
-        private static Random randomIndex = new Random();        
+        private static Random randomIndex = new Random();
         private int score = 0;
         private string[] newLabelNumber = new string[] { "2", "2", "2", "4" };
 
@@ -27,7 +27,6 @@ namespace _2048WindowsFormsApp
             GenerateNumber();
             ShowScore();
         }
-
 
         private void ChooseMapSize(WelcomeForm welcomeForm)
         {
@@ -63,38 +62,17 @@ namespace _2048WindowsFormsApp
                 var indexColumn = randomNumberLabel % mapSize;
                 if (labelsMap[indexRow, indexColumn].Text == String.Empty)
                 {
-                    var randomNumber = newLabelNumber[randomIndex.Next(newLabelNumber.Length)];
-                    labelsMap[indexRow, indexColumn].Text = randomNumber;                    
-                    SetColorLabel(labelsMap[indexRow, indexColumn], Convert.ToInt32(randomNumber));
+                    labelsMap[indexRow, indexColumn].Text = newLabelNumber[randomIndex.Next(newLabelNumber.Length)];
                     break;
                 }
             }
-        }
-
-        private void SetColorLabel(Label labelsMap, int number)
-        {            
-            switch (number)
-            {                
-                case 2: labelsMap.BackColor = Color.AliceBlue; break;
-                case 4: labelsMap.BackColor = Color.AntiqueWhite; break;
-                case 8: labelsMap.BackColor = Color.BurlyWood; break;
-                case 16: labelsMap.BackColor = Color.Coral; break;
-                case 32: labelsMap.BackColor = Color.Chocolate; break;
-                case 64: labelsMap.BackColor = Color.Brown; break;
-                case 128: labelsMap.BackColor = Color.Crimson; break;
-                case 256: labelsMap.BackColor = Color.DarkRed; break;
-                case 512: labelsMap.BackColor = Color.DeepPink; break;
-                case 1024: labelsMap.BackColor = Color.DarkOliveGreen; break;
-                case 2048: labelsMap.BackColor = Color.Black; break;
-            }           
         }
 
         private Label CreateLabel(int indexRow, int indexColumn)
         {
             Label label = new Label();
             label.BackColor = Color.Silver;
-            label.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
-            label.ForeColor = Color.SlateGray;
+            label.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
             label.Size = new Size(70, 70);
             label.Text = String.Empty;
             label.TextAlign = ContentAlignment.MiddleCenter;
@@ -122,8 +100,8 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
-                                        labelsMap[i, j].Text = (number * 2).ToString();                                        
-                                        labelsMap[i, k].Text = string.Empty;                                        
+                                        labelsMap[i, j].Text = (number * 2).ToString();
+                                        labelsMap[i, k].Text = string.Empty;
                                     }
                                     break;
                                 }
@@ -140,9 +118,9 @@ namespace _2048WindowsFormsApp
                             for (int k = j - 1; k >= 0; k--)
                             {
                                 if (labelsMap[i, k].Text != String.Empty)
-                                {                                    
-                                    labelsMap[i, j].Text = labelsMap[i, k].Text;                                    
-                                    labelsMap[i, k].Text = string.Empty;                                    
+                                {
+                                    labelsMap[i, j].Text = labelsMap[i, k].Text;
+                                    labelsMap[i, k].Text = string.Empty;
                                     break;
                                 }
                             }
@@ -166,8 +144,8 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
-                                        labelsMap[i, j].Text = (number * 2).ToString();                                        
-                                        labelsMap[i, k].Text = string.Empty;                                       
+                                        labelsMap[i, j].Text = (number * 2).ToString();
+                                        labelsMap[i, k].Text = string.Empty;
                                     }
                                     break;
                                 }
@@ -184,9 +162,9 @@ namespace _2048WindowsFormsApp
                             for (int k = j + 1; k < mapSize; k++)
                             {
                                 if (labelsMap[i, k].Text != String.Empty)
-                                {                                    
-                                    labelsMap[i, j].Text = labelsMap[i, k].Text;                                    
-                                    labelsMap[i, k].Text = string.Empty;                                    
+                                {
+                                    labelsMap[i, j].Text = labelsMap[i, k].Text;
+                                    labelsMap[i, k].Text = string.Empty;
                                     break;
                                 }
                             }
@@ -210,8 +188,8 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
-                                        labelsMap[i, j].Text = (number * 2).ToString();                                        
-                                        labelsMap[k, j].Text = string.Empty;                                        
+                                        labelsMap[i, j].Text = (number * 2).ToString();
+                                        labelsMap[k, j].Text = string.Empty;
                                     }
                                     break;
                                 }
@@ -228,9 +206,9 @@ namespace _2048WindowsFormsApp
                             for (int k = i + 1; k < mapSize; k++)
                             {
                                 if (labelsMap[k, j].Text != String.Empty)
-                                {                                    
-                                    labelsMap[i, j].Text = labelsMap[k, j].Text;                                    
-                                    labelsMap[k, j].Text = string.Empty;                                    
+                                {
+                                    labelsMap[i, j].Text = labelsMap[k, j].Text;
+                                    labelsMap[k, j].Text = string.Empty;
                                     break;
                                 }
                             }
@@ -254,8 +232,8 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
-                                        labelsMap[i, j].Text = (number * 2).ToString();                                        
-                                        labelsMap[k, j].Text = string.Empty;                                        
+                                        labelsMap[i, j].Text = (number * 2).ToString();
+                                        labelsMap[k, j].Text = string.Empty;
                                     }
                                     break;
                                 }
@@ -272,9 +250,9 @@ namespace _2048WindowsFormsApp
                             for (int k = i - 1; k >= 0; k--)
                             {
                                 if (labelsMap[k, j].Text != String.Empty)
-                                {                                    
-                                    labelsMap[i, j].Text = labelsMap[k, j].Text;                                    
-                                    labelsMap[k, j].Text = string.Empty;                                   
+                                {
+                                    labelsMap[i, j].Text = labelsMap[k, j].Text;
+                                    labelsMap[k, j].Text = string.Empty;
                                     break;
                                 }
                             }
