@@ -56,7 +56,7 @@ namespace _2048WindowsFormsApp
 
         private void GenerateNumber()
         {
-            while (true) //как улучшить
+            while (true) //как улучшить (когда 2048, закончить)
             {
                 var randomNumberLabel = random.Next(mapSize * mapSize);
                 var indexRow = randomNumberLabel / mapSize;
