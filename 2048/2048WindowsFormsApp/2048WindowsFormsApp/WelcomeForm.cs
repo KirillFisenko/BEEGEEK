@@ -18,15 +18,19 @@ namespace _2048WindowsFormsApp
         }
 
         private void startButton_Click(object sender, EventArgs e)
-        {            
+        {
+            if (userNameTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("Введите имя");
+            }
             if (mapSizeComboBox.Text == String.Empty)
             {
                 MessageBox.Show("Выберете размер поля");
             }
-            else
+            if (userNameTextBox.Text != String.Empty && mapSizeComboBox.Text != String.Empty)
             {
                 Close();
-            }            
+            }                       
         }
 
         private void WelcomeForm_Load(object sender, EventArgs e)

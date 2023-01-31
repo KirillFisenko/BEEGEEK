@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace _2048WindowsFormsApp
 {
@@ -11,6 +12,8 @@ namespace _2048WindowsFormsApp
         private static Random random = new Random();
         private static Random randomIndex = new Random();
         private int score = 0;
+        private int bestScore = 0;
+        private string userName;
         private string[] newLabelNumber = new string[] { "2", "2", "2", "4" };
 
         public MainForm()
@@ -21,11 +24,24 @@ namespace _2048WindowsFormsApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             var welcomeForm = new WelcomeForm();
-            welcomeForm.ShowDialog();
+            welcomeForm.ShowDialog();            
+            EnterUserName(welcomeForm);
             ChooseMapSize(welcomeForm);
             InitMap();
             GenerateNumber();
             ShowScore();
+            ShowBestScore();
+        }
+
+        
+
+        private void EnterUserName(WelcomeForm welcomeForm)
+        {
+            userName = welcomeForm.userNameTextBox.Text;
+            if (userName == string.Empty)
+            {
+                Application.Exit();
+            }
         }
 
         private void ChooseMapSize(WelcomeForm welcomeForm)
@@ -43,6 +59,11 @@ namespace _2048WindowsFormsApp
         private void ShowScore()
         {
             scoreLabel.Text = score.ToString();
+        }
+
+        private void ShowBestScore()
+        {
+            userRecordLabel.Text = bestScore.ToString();
         }
 
         private void InitMap()
@@ -153,6 +174,7 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
+                                        bestScore= score;
                                         labelsMap[i, j].Text = (number * 2).ToString();                                        
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
@@ -201,6 +223,7 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
+                                        bestScore = score;
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
@@ -249,6 +272,7 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
+                                        bestScore = score;
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
@@ -297,6 +321,7 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
+                                        bestScore = score;
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
@@ -332,6 +357,7 @@ namespace _2048WindowsFormsApp
             
             GenerateNumber();            
             ShowScore();
+            ShowBestScore();
             EndGame(labelsMap);
         }
 
