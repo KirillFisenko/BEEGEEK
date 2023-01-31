@@ -350,5 +350,11 @@ namespace _2048WindowsFormsApp
             var gameRules = new RulesForm();
             gameRules.ShowDialog();
         }
+
+        private void историяИгрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gameResult = new ResultForm();
+            gameResult.ShowDialog();
+        }
     }
 }

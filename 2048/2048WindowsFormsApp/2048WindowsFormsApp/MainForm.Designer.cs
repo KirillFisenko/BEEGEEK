@@ -36,6 +36,9 @@
             this.рестартToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.userRecordLabel = new System.Windows.Forms.Label();
+            this.историяИгрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@
             this.label1.Text = "СЧЕТ";
             // 
             // scoreLabel
-            //             
+            // 
             this.scoreLabel.AutoSize = true;
             this.scoreLabel.BackColor = System.Drawing.Color.DarkGray;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -77,6 +80,7 @@
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.правилаИгрыToolStripMenuItem,
+            this.историяИгрыToolStripMenuItem,
             this.рестартToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
@@ -115,6 +119,37 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "2048";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.DarkGray;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Bisque;
+            this.label3.Location = new System.Drawing.Point(224, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "РЕКОРД";
+            // 
+            // userRecordLabel
+            // 
+            this.userRecordLabel.AutoSize = true;
+            this.userRecordLabel.BackColor = System.Drawing.Color.DarkGray;
+            this.userRecordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userRecordLabel.ForeColor = System.Drawing.Color.Snow;
+            this.userRecordLabel.Location = new System.Drawing.Point(242, 52);
+            this.userRecordLabel.Name = "userRecordLabel";
+            this.userRecordLabel.Size = new System.Drawing.Size(0, 24);
+            this.userRecordLabel.TabIndex = 5;
+            this.userRecordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // историяИгрыToolStripMenuItem
+            // 
+            this.историяИгрыToolStripMenuItem.Name = "историяИгрыToolStripMenuItem";
+            this.историяИгрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.историяИгрыToolStripMenuItem.Text = "История игры";
+            this.историяИгрыToolStripMenuItem.Click += new System.EventHandler(this.историяИгрыToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +158,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(320, 448);
+            this.Controls.Add(this.userRecordLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.label1);
@@ -149,6 +186,9 @@
         private System.Windows.Forms.ToolStripMenuItem рестартToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label userRecordLabel;
+        private System.Windows.Forms.ToolStripMenuItem историяИгрыToolStripMenuItem;
     }
 }
 
