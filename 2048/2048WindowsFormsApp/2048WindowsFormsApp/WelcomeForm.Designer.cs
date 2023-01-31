@@ -130,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Name = "WelcomeForm";
             this.Text = "2048";
+            this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,5 +28,10 @@ namespace _2048WindowsFormsApp
                 Close();
             }            
         }
+
+        private void WelcomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

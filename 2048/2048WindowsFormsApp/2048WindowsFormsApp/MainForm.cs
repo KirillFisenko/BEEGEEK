@@ -30,7 +30,14 @@ namespace _2048WindowsFormsApp
 
         private void ChooseMapSize(WelcomeForm welcomeForm)
         {
-            mapSize = Convert.ToInt32(welcomeForm.mapSizeComboBox.Text.Substring(0, 1));
+            try
+            {
+                mapSize = Convert.ToInt32(welcomeForm.mapSizeComboBox.Text.Substring(0, 1));
+            }
+            catch
+            {
+                Application.Exit();
+            }            
         }
 
         private void ShowScore()
@@ -55,7 +62,7 @@ namespace _2048WindowsFormsApp
 
         private void GenerateNumber()
         {
-            while (true) //как улучшить (когда 2048, закончить)
+            while (true)
             {
                 var randomNumberLabel = random.Next(mapSize * mapSize);
                 var indexRow = randomNumberLabel / mapSize;
@@ -88,11 +95,36 @@ namespace _2048WindowsFormsApp
             }           
         }
 
+        private void EndGame(Label[,] labelsMap)
+        {
+            var cnt = 0;
+            for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelsMap[i, j].Text == "2048")
+                    {
+                        MessageBox.Show("Вы выиграли! Игра будет перезагружена");
+                        Application.Restart();
+                    }
+                    if (labelsMap[i, j].Text != String.Empty)
+                    {
+                        cnt++;
+                    }                    
+                }
+            }
+            if(cnt == mapSize * mapSize)
+            {
+                MessageBox.Show("Вы проиграли! Игра будет перезагружена");
+                Application.Restart();
+            }            
+        }
+
         private Label CreateLabel(int indexRow, int indexColumn)
         {
             Label label = new Label();
             label.BackColor = Color.Silver;
-            label.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
+            label.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
             label.ForeColor = Color.SlateGray;
             label.Size = new Size(70, 70);
             label.Text = String.Empty;
@@ -121,10 +153,10 @@ namespace _2048WindowsFormsApp
                                     {
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
-                                        labelsMap[i, j].Text = (number * 2).ToString();
-                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
+                                        labelsMap[i, j].Text = (number * 2).ToString();                                        
+                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
-                                        labelsMap[i, k].BackColor = Color.Silver;
+                                        labelsMap[i, k].BackColor = Color.Silver;                                        
                                     }
                                     break;
                                 }
@@ -170,7 +202,7 @@ namespace _2048WindowsFormsApp
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
                                         labelsMap[i, j].Text = (number * 2).ToString();
-                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
+                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
                                         labelsMap[i, k].BackColor = Color.Silver;
                                     }
@@ -218,7 +250,7 @@ namespace _2048WindowsFormsApp
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
                                         labelsMap[i, j].Text = (number * 2).ToString();
-                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
+                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
                                         labelsMap[k, j].BackColor = Color.Silver;
                                     }
@@ -266,7 +298,7 @@ namespace _2048WindowsFormsApp
                                         var number = int.Parse(labelsMap[i, j].Text);
                                         score += number * 2;
                                         labelsMap[i, j].Text = (number * 2).ToString();
-                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
+                                        SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
                                         labelsMap[k, j].BackColor = Color.Silver;
                                     }
@@ -297,9 +329,10 @@ namespace _2048WindowsFormsApp
                     }
                 }
             }
-
-            GenerateNumber();
+            
+            GenerateNumber();            
             ShowScore();
+            EndGame(labelsMap);
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
