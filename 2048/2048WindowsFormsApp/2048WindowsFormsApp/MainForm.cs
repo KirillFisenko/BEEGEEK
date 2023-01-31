@@ -7,7 +7,7 @@ namespace _2048WindowsFormsApp
     public partial class MainForm : Form
     {
         private Label[,] labelsMap;
-        private const int mapSize = 4;
+        private static int mapSize = 4;
         private static Random random = new Random();
         private static Random randomIndex = new Random();
         private int score = 0;
@@ -20,9 +20,17 @@ namespace _2048WindowsFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            var welcomeForm = new WelcomeForm();
+            welcomeForm.ShowDialog();
+            ChooseMapSize(welcomeForm);
             InitMap();
             GenerateNumber();
             ShowScore();
+        }
+
+        private void ChooseMapSize(WelcomeForm welcomeForm)
+        {
+            mapSize = Convert.ToInt32(welcomeForm.mapSizeComboBox.Text.Substring(0, 1));
         }
 
         private void ShowScore()
@@ -56,7 +64,7 @@ namespace _2048WindowsFormsApp
                 {
                     labelsMap[indexRow, indexColumn].Text = newLabelNumber[randomIndex.Next(newLabelNumber.Length)];
                     break;
-                }                
+                }
             }
         }
 
@@ -68,8 +76,8 @@ namespace _2048WindowsFormsApp
             label.Size = new Size(70, 70);
             label.Text = String.Empty;
             label.TextAlign = ContentAlignment.MiddleCenter;
-            int x = 10 + indexColumn * 76;
-            int y = 70 + indexRow * 76;
+            int x = 5 + indexColumn * 76;
+            int y = 90 + indexRow * 76;
             label.Location = new Point(x, y);
             return label;
         }

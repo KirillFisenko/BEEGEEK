@@ -33,10 +33,11 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(21, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label1.Location = new System.Drawing.Point(21, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 131);
+            this.label1.Size = new System.Drawing.Size(382, 131);
             this.label1.TabIndex = 0;
             this.label1.Text = "КАК ИГРАТЬ: Используйте стрелки на клавиатуре, чтобы перемещать плитки. Когда две" +
     " плитки с одинаковыми цифрами соприкасаются, они сливаются в одну!";
@@ -46,8 +47,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(415, 204);
+            this.BackColor = System.Drawing.Color.Bisque;
+            this.ClientSize = new System.Drawing.Size(415, 155);
             this.Controls.Add(this.label1);
             this.Name = "RulesForm";
             this.Text = "Правила игры";
