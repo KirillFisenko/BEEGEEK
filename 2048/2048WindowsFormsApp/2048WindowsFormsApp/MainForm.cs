@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -14,6 +15,7 @@ namespace _2048WindowsFormsApp
         private int score = 0;
         private int bestScore = 0;
         private string userName;
+        public static string path = "result.txt";
         private string[] newLabelNumber = new string[] { "2", "2", "2", "4" };
 
         public MainForm()
@@ -32,6 +34,21 @@ namespace _2048WindowsFormsApp
             ShowUserName();
             ShowScore();
             ShowBestScore();
+        }
+
+        private void WriteToFile(string filename, string result)
+        {
+            var fileWriter = new StreamWriter(filename, true);
+            fileWriter.WriteLine(result);
+            fileWriter.Close();
+        }
+
+        public static string ReadFile(string filename)
+        {
+            var fileReader = new StreamReader(filename);
+            var result = fileReader.ReadToEnd();
+            fileReader.Close();
+            return result;
         }
 
         private void ShowUserName()
@@ -131,6 +148,8 @@ namespace _2048WindowsFormsApp
                     {
                         MessageBox.Show("Вы выиграли! Игра будет перезагружена");
                         Application.Restart();
+                        var gameResult = userName + "#" + bestScore;
+                        WriteToFile(path, gameResult);
                     }
                     if (labelsMap[i, j].Text != String.Empty)
                     {
@@ -142,7 +161,10 @@ namespace _2048WindowsFormsApp
             {
                 MessageBox.Show("Вы проиграли! Игра будет перезагружена");
                 Application.Restart();
-            }            
+                var gameResult = userName + "#" + bestScore;
+                WriteToFile(path, gameResult);
+            }
+            
         }
 
         private Label CreateLabel(int indexRow, int indexColumn)

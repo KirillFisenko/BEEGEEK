@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.scoreDataGridView = new System.Windows.Forms.DataGridView();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Record = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoreDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // scoreDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.scoreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.scoreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserName,
             this.Record});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(374, 420);
-            this.dataGridView1.TabIndex = 0;
+            this.scoreDataGridView.Location = new System.Drawing.Point(13, 12);
+            this.scoreDataGridView.Name = "scoreDataGridView";
+            this.scoreDataGridView.Size = new System.Drawing.Size(245, 420);
+            this.scoreDataGridView.TabIndex = 0;
             // 
             // UserName
             // 
@@ -59,19 +59,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(399, 494);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(274, 450);
+            this.Controls.Add(this.scoreDataGridView);
             this.Name = "ResultForm";
             this.Text = "Результаты игры";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ResultForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.scoreDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView scoreDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Record;
     }

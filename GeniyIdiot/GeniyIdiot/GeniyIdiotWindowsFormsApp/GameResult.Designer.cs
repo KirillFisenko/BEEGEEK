@@ -46,6 +46,7 @@
             this.resultsDataGridView.Name = "resultsDataGridView";
             this.resultsDataGridView.Size = new System.Drawing.Size(343, 297);
             this.resultsDataGridView.TabIndex = 0;
+            this.resultsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataGridView_CellContentClick);
             // 
             // UserNameColumn
             // 

@@ -26,5 +26,10 @@ namespace GeniyIdiotWindowsFormsApp
                 resultsDataGridView.Rows.Add(user.Name, user.CountRightAnswers, user.Diagnose);
             }
         }
+
+        private void resultsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
