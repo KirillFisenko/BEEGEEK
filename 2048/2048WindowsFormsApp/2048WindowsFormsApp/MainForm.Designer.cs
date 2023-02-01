@@ -33,12 +33,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правилаИгрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.историяИгрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.рестартToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.userRecordLabel = new System.Windows.Forms.Label();
-            this.историяИгрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +95,13 @@
             this.правилаИгрыToolStripMenuItem.Text = "Правила игры";
             this.правилаИгрыToolStripMenuItem.Click += new System.EventHandler(this.правилаИгрыToolStripMenuItem_Click);
             // 
+            // историяИгрыToolStripMenuItem
+            // 
+            this.историяИгрыToolStripMenuItem.Name = "историяИгрыToolStripMenuItem";
+            this.историяИгрыToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.историяИгрыToolStripMenuItem.Text = "История игры";
+            this.историяИгрыToolStripMenuItem.Click += new System.EventHandler(this.историяИгрыToolStripMenuItem_Click);
+            // 
             // рестартToolStripMenuItem
             // 
             this.рестартToolStripMenuItem.Name = "рестартToolStripMenuItem";
@@ -113,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(12, 30);
+            this.label2.Location = new System.Drawing.Point(12, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 46);
             this.label2.TabIndex = 3;
@@ -143,12 +151,16 @@
             this.userRecordLabel.TabIndex = 5;
             this.userRecordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // историяИгрыToolStripMenuItem
+            // userNameLabel
             // 
-            this.историяИгрыToolStripMenuItem.Name = "историяИгрыToolStripMenuItem";
-            this.историяИгрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.историяИгрыToolStripMenuItem.Text = "История игры";
-            this.историяИгрыToolStripMenuItem.Click += new System.EventHandler(this.историяИгрыToolStripMenuItem_Click);
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNameLabel.ForeColor = System.Drawing.Color.SeaShell;
+            this.userNameLabel.Location = new System.Drawing.Point(20, 65);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(77, 18);
+            this.userNameLabel.TabIndex = 6;
+            this.userNameLabel.Text = "userName";
             // 
             // MainForm
             // 
@@ -158,6 +170,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(320, 448);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.userRecordLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -189,6 +202,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label userRecordLabel;
         private System.Windows.Forms.ToolStripMenuItem историяИгрыToolStripMenuItem;
+        private System.Windows.Forms.Label userNameLabel;
     }
 }
 

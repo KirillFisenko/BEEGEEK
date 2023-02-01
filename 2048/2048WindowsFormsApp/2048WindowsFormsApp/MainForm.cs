@@ -29,11 +29,15 @@ namespace _2048WindowsFormsApp
             ChooseMapSize(welcomeForm);
             InitMap();
             GenerateNumber();
+            ShowUserName();
             ShowScore();
             ShowBestScore();
         }
 
-        
+        private void ShowUserName()
+        {
+            userNameLabel.Text = userName;
+        }
 
         private void EnterUserName(WelcomeForm welcomeForm)
         {
