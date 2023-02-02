@@ -36,13 +36,15 @@
             // 
             // scoreDataGridView
             // 
+            this.scoreDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.scoreDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.scoreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.scoreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserName,
             this.Record});
             this.scoreDataGridView.Location = new System.Drawing.Point(13, 12);
             this.scoreDataGridView.Name = "scoreDataGridView";
-            this.scoreDataGridView.Size = new System.Drawing.Size(245, 420);
+            this.scoreDataGridView.Size = new System.Drawing.Size(245, 307);
             this.scoreDataGridView.TabIndex = 0;
             // 
             // UserName
@@ -61,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(274, 450);
+            this.ClientSize = new System.Drawing.Size(274, 331);
             this.Controls.Add(this.scoreDataGridView);
             this.Name = "ResultForm";
             this.Text = "Результаты игры";

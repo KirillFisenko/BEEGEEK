@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _2048WindowsFormsApp
@@ -27,6 +20,6 @@ namespace _2048WindowsFormsApp
                 var score = massive[1];
                 scoreDataGridView.Rows.Add(name, score);                
             }
-        }
+        }        
     }
 }
