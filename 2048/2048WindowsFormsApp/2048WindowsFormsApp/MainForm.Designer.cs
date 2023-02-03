@@ -45,8 +45,7 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            //this.label1.BackColor = System.Drawing.Color.DarkGray;
+            this.label1.AutoSize = true;            
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Bisque;
             this.label1.Location = new System.Drawing.Point(135, 28);
@@ -57,8 +56,7 @@
             // 
             // scoreLabel
             // 
-            this.scoreLabel.AutoSize = true;
-            //this.scoreLabel.BackColor = System.Drawing.Color.DarkGray;
+            this.scoreLabel.AutoSize = true;            
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scoreLabel.ForeColor = System.Drawing.Color.Snow;
             this.scoreLabel.Location = new System.Drawing.Point(137, 50);
@@ -141,8 +139,7 @@
             // 
             // userRecordLabel
             // 
-            this.userRecordLabel.AutoSize = true;
-            //this.userRecordLabel.BackColor = System.Drawing.Color.DarkGray;
+            this.userRecordLabel.AutoSize = true;            
             this.userRecordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.userRecordLabel.ForeColor = System.Drawing.Color.Snow;
             this.userRecordLabel.Location = new System.Drawing.Point(234, 52);

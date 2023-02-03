@@ -106,5 +106,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2048ClassLibrary\2048ClassLibrary.csproj">
+      <Project>{7fecba8f-9da1-487f-b33f-16c5ce86de1b}</Project>
+      <Name>2048ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

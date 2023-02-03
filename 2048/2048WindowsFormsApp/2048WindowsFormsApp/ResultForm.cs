@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using _2048ClassLibrary;
 
 namespace _2048WindowsFormsApp
 {
@@ -12,7 +13,7 @@ namespace _2048WindowsFormsApp
 
         private void ResultForm_Load(object sender, EventArgs e)
         {
-            string[] values = MainForm.ReadFile(MainForm.path).Trim().Split('\n');
+            string[] values = FileProvider.ReadFile(MainForm.path).Trim().Split('\n');
             foreach (var line in values)
             {
                 var massive = line.Trim().Split('#');

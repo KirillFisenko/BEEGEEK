@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using _2048ClassLibrary;
 
 namespace _2048WindowsFormsApp
 {

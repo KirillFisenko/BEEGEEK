@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using _2048ClassLibrary;
 
 namespace _2048WindowsFormsApp
 {
@@ -34,22 +35,7 @@ namespace _2048WindowsFormsApp
             ShowUserName();
             ShowScore();
             ShowBestScore();
-        }
-
-        private void WriteToFile(string filename, string result)
-        {
-            var fileWriter = new StreamWriter(filename, true);
-            fileWriter.WriteLine(result);
-            fileWriter.Close();
-        }
-
-        public static string ReadFile(string filename)
-        {
-            var fileReader = new StreamReader(filename);
-            var result = fileReader.ReadToEnd();
-            fileReader.Close();
-            return result;
-        }
+        }        
 
         private void ShowUserName()
         {
@@ -149,7 +135,7 @@ namespace _2048WindowsFormsApp
                         MessageBox.Show("Вы выиграли! Игра будет перезагружена");
                         Application.Restart();
                         var gameResult = userName + "#" + bestScore;
-                        WriteToFile(path, gameResult);
+                        FileProvider.WriteToFile(path, gameResult);
                     }
                     if (labelsMap[i, j].Text != String.Empty)
                     {
@@ -162,7 +148,7 @@ namespace _2048WindowsFormsApp
                 MessageBox.Show("Вы проиграли! Игра будет перезагружена");
                 Application.Restart();
                 var gameResult = userName + "#" + bestScore;
-                WriteToFile(path, gameResult);
+                FileProvider.WriteToFile(path, gameResult);
             }
             
         }
