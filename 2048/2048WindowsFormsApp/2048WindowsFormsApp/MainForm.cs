@@ -123,17 +123,17 @@ namespace _2048WindowsFormsApp
         {            
             switch (number)
             {                
-                case "2": labelsMap.BackColor = Color.AliceBlue; break;
-                case "4": labelsMap.BackColor = Color.AntiqueWhite; break;
-                case "8": labelsMap.BackColor = Color.BurlyWood; break;
-                case "16": labelsMap.BackColor = Color.Coral; break;
-                case "32": labelsMap.BackColor = Color.Chocolate; break;
-                case "64": labelsMap.BackColor = Color.Brown; break;
-                case "128": labelsMap.BackColor = Color.Crimson; break;
-                case "256": labelsMap.BackColor = Color.DarkRed; break;
-                case "512": labelsMap.BackColor = Color.DeepPink; break;
-                case "1024": labelsMap.BackColor = Color.DarkOliveGreen; break;
-                case "2048": labelsMap.BackColor = Color.Black; break;
+                case "2": labelsMap.BackColor = Color.FromArgb(238, 228, 218); break;
+                case "4": labelsMap.BackColor = Color.FromArgb(237, 224, 200); break;
+                case "8": labelsMap.BackColor = Color.FromArgb(242, 177, 121); break;
+                case "16": labelsMap.BackColor = Color.FromArgb(245, 149, 99); break;
+                case "32": labelsMap.BackColor = Color.FromArgb(246, 124, 95); break;
+                case "64": labelsMap.BackColor = Color.FromArgb(246, 94, 59); break;
+                case "128": labelsMap.BackColor = Color.FromArgb(237, 207, 114); break;
+                case "256": labelsMap.BackColor = Color.FromArgb(237, 204, 97); break;
+                case "512": labelsMap.BackColor = Color.FromArgb(237, 200, 80); break;
+                case "1024": labelsMap.BackColor = Color.FromArgb(231, 195, 86); break;
+                case "2048": labelsMap.BackColor = Color.FromArgb(233, 189, 80); break;
             }           
         }
 
@@ -170,9 +170,9 @@ namespace _2048WindowsFormsApp
         private Label CreateLabel(int indexRow, int indexColumn)
         {
             Label label = new Label();
-            label.BackColor = Color.Silver;
+            label.BackColor = Color.FromArgb(204, 193, 180);
             label.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(204)));
-            label.ForeColor = Color.SlateGray;
+            label.ForeColor = Color.FromArgb(119, 110, 101);
             label.Size = new Size(70, 70);
             label.Text = String.Empty;
             label.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,7 +204,7 @@ namespace _2048WindowsFormsApp
                                         labelsMap[i, j].Text = (number * 2).ToString();                                        
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
-                                        labelsMap[i, k].BackColor = Color.Silver;                                        
+                                        labelsMap[i, k].BackColor = Color.FromArgb(204, 193, 180);                                        
                                     }
                                     break;
                                 }
@@ -212,6 +212,7 @@ namespace _2048WindowsFormsApp
                         }
                     }
                 }
+                
                 for (int i = 0; i < mapSize; i++)
                 {
                     for (int j = mapSize - 1; j >= 0; j--)
@@ -225,7 +226,7 @@ namespace _2048WindowsFormsApp
                                     labelsMap[i, j].Text = labelsMap[i, k].Text;
                                     SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
                                     labelsMap[i, k].Text = string.Empty;
-                                    labelsMap[i, k].BackColor = Color.Silver;
+                                    labelsMap[i, k].BackColor = Color.FromArgb(204, 193, 180);
                                     break;
                                 }
                             }
@@ -253,7 +254,7 @@ namespace _2048WindowsFormsApp
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[i, k].Text = string.Empty;
-                                        labelsMap[i, k].BackColor = Color.Silver;
+                                        labelsMap[i, k].BackColor = Color.FromArgb(204, 193, 180);
                                     }
                                     break;
                                 }
@@ -274,7 +275,7 @@ namespace _2048WindowsFormsApp
                                     labelsMap[i, j].Text = labelsMap[i, k].Text;
                                     SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
                                     labelsMap[i, k].Text = string.Empty;
-                                    labelsMap[i, k].BackColor = Color.Silver;
+                                    labelsMap[i, k].BackColor = Color.FromArgb(204, 193, 180);
                                     break;
                                 }
                             }
@@ -302,7 +303,7 @@ namespace _2048WindowsFormsApp
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
-                                        labelsMap[k, j].BackColor = Color.Silver;
+                                        labelsMap[k, j].BackColor = Color.FromArgb(204, 193, 180);
                                     }
                                     break;
                                 }
@@ -323,7 +324,7 @@ namespace _2048WindowsFormsApp
                                     labelsMap[i, j].Text = labelsMap[k, j].Text;
                                     SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
                                     labelsMap[k, j].Text = string.Empty;
-                                    labelsMap[k, j].BackColor = Color.Silver;
+                                    labelsMap[k, j].BackColor = Color.FromArgb(204, 193, 180);
                                     break;
                                 }
                             }
@@ -351,7 +352,7 @@ namespace _2048WindowsFormsApp
                                         labelsMap[i, j].Text = (number * 2).ToString();
                                         SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);                                        
                                         labelsMap[k, j].Text = string.Empty;
-                                        labelsMap[k, j].BackColor = Color.Silver;
+                                        labelsMap[k, j].BackColor = Color.FromArgb(204, 193, 180);
                                     }
                                     break;
                                 }
@@ -372,7 +373,7 @@ namespace _2048WindowsFormsApp
                                     labelsMap[i, j].Text = labelsMap[k, j].Text;
                                     SetColorLabel(labelsMap[i, j], labelsMap[i, j].Text);
                                     labelsMap[k, j].Text = string.Empty;
-                                    labelsMap[k, j].BackColor = Color.Silver;
+                                    labelsMap[k, j].BackColor = Color.FromArgb(204, 193, 180);
                                     break;
                                 }
                             }
