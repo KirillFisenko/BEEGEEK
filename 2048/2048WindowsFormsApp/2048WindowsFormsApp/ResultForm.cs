@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using _2048ClassLibrary;
 
@@ -13,14 +14,18 @@ namespace _2048WindowsFormsApp
 
         private void ResultForm_Load(object sender, EventArgs e)
         {
-            string[] values = FileProvider.ReadFile(MainForm.path).Trim().Split('\n');
-            foreach (var line in values)
+            try
             {
-                var massive = line.Trim().Split('#');
-                var name = massive[0];
-                var score = massive[1];
-                scoreDataGridView.Rows.Add(name, score);                
+                string[] values = FileProvider.ReadFile(MainForm.path).Trim().Split('\n');
+                foreach (var line in values)
+                {
+                    var massive = line.Trim().Split('#');
+                    var name = massive[0];
+                    var score = massive[1];
+                    scoreDataGridView.Rows.Add(name, score);
+                }
             }
-        }        
+            catch { }
+        }
     }
 }
