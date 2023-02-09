@@ -6,8 +6,7 @@ namespace BallGamesWindowsFormsApp
     {        
         public RandomSizeAndPointBall(MainForm form) : base(form)
         {
-            size = random.Next(10, 80);
-            brush = Brushes.Black;
+            size = random.Next(10, 80);            
         }
     }
 }

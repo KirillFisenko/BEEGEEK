@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.moveBallButton = new System.Windows.Forms.Button();
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
-            this.moveBallbutton2 = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // moveBallButton
@@ -39,7 +40,7 @@
             this.moveBallButton.Name = "moveBallButton";
             this.moveBallButton.Size = new System.Drawing.Size(132, 40);
             this.moveBallButton.TabIndex = 0;
-            this.moveBallButton.Text = "Двигать1";
+            this.moveBallButton.Text = "Старт/Стоп";
             this.moveBallButton.UseVisualStyleBackColor = true;
             this.moveBallButton.Click += new System.EventHandler(this.moveBallButton_Click);
             // 
@@ -49,19 +50,14 @@
             this.drawRandomBallbutton.Name = "drawRandomBallbutton";
             this.drawRandomBallbutton.Size = new System.Drawing.Size(132, 47);
             this.drawRandomBallbutton.TabIndex = 1;
-            this.drawRandomBallbutton.Text = "Нарисовать случайный шарик";
+            this.drawRandomBallbutton.Text = "Много шариков";
             this.drawRandomBallbutton.UseVisualStyleBackColor = true;
             this.drawRandomBallbutton.Click += new System.EventHandler(this.drawRandomBallbutton_Click);
             // 
-            // moveBallbutton2
+            // timer
             // 
-            this.moveBallbutton2.Location = new System.Drawing.Point(464, 194);
-            this.moveBallbutton2.Name = "moveBallbutton2";
-            this.moveBallbutton2.Size = new System.Drawing.Size(132, 44);
-            this.moveBallbutton2.TabIndex = 2;
-            this.moveBallbutton2.Text = "Двигать2";
-            this.moveBallbutton2.UseVisualStyleBackColor = true;
-            this.moveBallbutton2.Click += new System.EventHandler(this.moveBallbutton2_Click);
+            this.timer.Interval = 10;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // MainForm
             // 
@@ -69,7 +65,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(634, 589);
-            this.Controls.Add(this.moveBallbutton2);
             this.Controls.Add(this.drawRandomBallbutton);
             this.Controls.Add(this.moveBallButton);
             this.Name = "MainForm";
@@ -83,7 +78,7 @@
 
         private System.Windows.Forms.Button moveBallButton;
         private System.Windows.Forms.Button drawRandomBallbutton;
-        private System.Windows.Forms.Button moveBallbutton2;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

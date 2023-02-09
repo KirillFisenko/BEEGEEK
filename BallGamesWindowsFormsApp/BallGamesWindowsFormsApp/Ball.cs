@@ -5,10 +5,11 @@ namespace BallGamesWindowsFormsApp
     public class Ball
     {
         private MainForm form;
+        protected int vx = 2;
+        protected int vy = 2;
         protected int x;
         protected int y;
-        protected int size = 50;
-        protected Brush brush = Brushes.Green;
+        protected int size = 50;        
 
         public Ball(MainForm form)
         {
@@ -17,15 +18,16 @@ namespace BallGamesWindowsFormsApp
 
         public void Show()
         {
-            var graphics = form.CreateGraphics();            
+            var graphics = form.CreateGraphics();
+            var brush = Brushes.Green;
             var rectangle = new Rectangle(x, y, size, size);
             graphics.FillEllipse(brush, rectangle);
         }
 
         private void Go()
         {
-            x += 10;
-            y += 10;
+            x += vx;
+            y += vy;
         }
 
         private void Clear()
