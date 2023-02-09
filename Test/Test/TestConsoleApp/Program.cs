@@ -189,7 +189,7 @@ public class SinglyLinkedList
 
     public bool Remove(int item)
     {
-        if (count == 0 || item == null)
+        if (count == 0)
         {
             return false;
         }
@@ -224,7 +224,7 @@ public class SinglyLinkedList
     }
     public bool RemoveLast(int item)
     {
-        if (count == 0 || item == null)
+        if (count == 0)
         {
             return false;
         }
@@ -258,8 +258,8 @@ public class SinglyLinkedList
             RemoveNode(current);
             cnt++;
         }
-        
-        return cnt;        
+
+        return cnt;
     }
     public void Reverse()
     {
@@ -275,27 +275,273 @@ public class SinglyLinkedList
         current.Next = prev;
         Head = current;
     }
-    
+
 }
 
+public class SinglyCircularLinkedList
+{
+    public Node Tail;
+    private int count = 0;
 
+    public int GetCount()
+    {
+        return count;
+    }
 
+    public string Print()
+    {
+        if (count == 0)
+        {
+            return string.Empty;
+        }
+
+        return Print(Tail.Next);
+    }
+
+    public string Print(Node node)
+    {
+        if (count == 0)
+        {
+            return string.Empty;
+        }
+
+        string result = "";
+        Node current = node;
+        do
+        {
+            result += current.Value + " ";
+            current = current.Next;
+        } while (current != node);
+
+        return result;
+    }
+
+    public Node Find(int key)
+    {
+        if (count == 0)
+        {
+            return null;
+        }
+
+        Node current = Tail;
+        do
+        {
+            if (current.Value == key)
+            {
+                return current;
+            }
+
+            current = current.Next;
+        }
+        while (current != Tail);
+
+        return null;
+    }
+
+    public Node FindLast(int key)
+    {
+        if (count == 0)
+        {
+            return null;
+        }
+        Node lastCurrent = null;
+        Node current = Tail.Next;
+        do
+        {
+            if (current.Value == key)
+            {
+                lastCurrent = current;
+            }
+
+            current = current.Next;
+        }
+        while (current != Tail.Next);
+
+        return lastCurrent;
+    }
+
+    private void AddAfterInternal(Node node, Node newNode)
+    {
+        newNode.Next = node.Next;
+        node.Next = newNode;
+        count++;
+    }
+
+    private void InsertNodeToEmptyList(Node node)
+    {
+        node.Next = node;
+        Tail = node;
+        count++;
+    }
+
+    public void PushBack(int item)
+    {
+        Node newNode = new Node(item);
+
+        if (count == 0)
+        {
+            InsertNodeToEmptyList(newNode);
+        }
+        else
+        {
+            AddAfterInternal(Tail, newNode);
+            Tail = newNode;
+        }
+    }
+
+    public void PushFront(int item)
+    {
+        Node newNode = new Node(item);
+        if (count == 0)
+        {
+            InsertNodeToEmptyList(newNode);
+        }
+        else
+        {
+            AddAfterInternal(Tail, newNode);
+        }
+    }
+
+    public void AddAfter(Node node, int item)
+    {
+        Node newNode = new Node(item);
+
+        AddAfterInternal(node, newNode);
+        if (node == Tail)
+        {
+            Tail = newNode;
+        }
+    }
+
+    public void AddBefore(Node node, int item)
+    {
+        if (node == null)
+        {
+            return;
+        }
+
+        if (node == Tail.Next)
+        {
+            PushFront(item);
+        }
+        else
+        {
+            Node newNode = new Node(item);
+            Node previous = Tail.Next;
+
+            while (previous.Next != null)
+            {
+                if (previous.Next == node)
+                {
+                    break;
+                }
+
+                previous = previous.Next;
+            }
+
+            previous.Next = newNode;
+            newNode.Next = node;
+
+            count++;
+        }
+    }
+
+    private void RemoveAfterNodeInternal(Node node)
+    {
+        if (count == 0)
+        {
+            throw new Exception("Список пуст");
+        }
+
+        if (count == 1)
+        {
+            Tail = null;
+        }
+        else
+        {
+            if (node.Next == Tail)
+            {
+                Tail = node;
+            }
+
+            node.Next = node.Next.Next;
+        }
+
+        count--;
+    }
+
+    public void RemoveFirst()
+    {
+        RemoveAfterNodeInternal(Tail);
+    }
+
+    public void RemoveNode(Node node)
+    {
+        if (count == 0)
+        {
+            throw new Exception("Список пуст");
+        }
+
+        Node current = node;
+        while (current.Next != node)
+        {
+            current = current.Next;
+        }
+
+        RemoveAfterNodeInternal(current);
+    }
+
+    public void RemoveLast()
+    {
+        RemoveNode(Tail);
+    }
+
+    public bool Remove(int item)
+    {
+        if (count == 0)
+        {
+            return false;
+        }
+        var current = Find(item);
+        if (current == null)
+        {
+            return false;
+        }
+        else
+        {
+            RemoveNode(current);
+            return true;
+        }
+    }
+
+    public bool RemoveLast(int item)
+    {
+        if (count == 0)
+        {
+            return false;
+        }
+        var current = FindLast(item);
+        if (current == null)
+        {
+            return false;
+        }
+        else
+        {
+            RemoveNode(current);
+            return true;
+        }
+    }
+}
 public class Program
 {
     static void Main(string[] args)
     {
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.PushBack(1);
-        singlyLinkedList.PushBack(1);
-        singlyLinkedList.PushBack(1);
-        singlyLinkedList.PushBack(1);
-        singlyLinkedList.PushBack(2);        
 
-        Console.WriteLine(singlyLinkedList.Print());
-        
-        singlyLinkedList.RemoveAll(2);
+        SinglyCircularLinkedList singlyCircularLinkedList = new SinglyCircularLinkedList();
+        singlyCircularLinkedList.PushBack(6);
 
-        Console.WriteLine(singlyLinkedList.Print());
+        Console.WriteLine(singlyCircularLinkedList.Print());
+
 
         Console.ReadLine();
     }
