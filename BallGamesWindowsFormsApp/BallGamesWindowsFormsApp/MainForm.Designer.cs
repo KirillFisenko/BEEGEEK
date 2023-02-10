@@ -29,44 +29,76 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.moveBallButton = new System.Windows.Forms.Button();
+            this.stopBallButton = new System.Windows.Forms.Button();
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.restartButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // moveBallButton
+            // stopBallButton
             // 
-            this.moveBallButton.Location = new System.Drawing.Point(464, 116);
-            this.moveBallButton.Name = "moveBallButton";
-            this.moveBallButton.Size = new System.Drawing.Size(132, 40);
-            this.moveBallButton.TabIndex = 0;
-            this.moveBallButton.Text = "Старт/Стоп";
-            this.moveBallButton.UseVisualStyleBackColor = true;
-            this.moveBallButton.Click += new System.EventHandler(this.moveBallButton_Click);
+            this.stopBallButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stopBallButton.ForeColor = System.Drawing.Color.Crimson;
+            this.stopBallButton.Location = new System.Drawing.Point(658, 137);
+            this.stopBallButton.Name = "stopBallButton";
+            this.stopBallButton.Size = new System.Drawing.Size(205, 87);
+            this.stopBallButton.TabIndex = 0;
+            this.stopBallButton.Text = "Остановить";
+            this.stopBallButton.UseVisualStyleBackColor = true;
+            this.stopBallButton.Click += new System.EventHandler(this.stopBallButton_Click);
             // 
             // drawRandomBallbutton
             // 
-            this.drawRandomBallbutton.Location = new System.Drawing.Point(464, 33);
+            this.drawRandomBallbutton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawRandomBallbutton.ForeColor = System.Drawing.Color.DarkCyan;
+            this.drawRandomBallbutton.Location = new System.Drawing.Point(658, 12);
             this.drawRandomBallbutton.Name = "drawRandomBallbutton";
-            this.drawRandomBallbutton.Size = new System.Drawing.Size(132, 47);
+            this.drawRandomBallbutton.Size = new System.Drawing.Size(205, 87);
             this.drawRandomBallbutton.TabIndex = 1;
-            this.drawRandomBallbutton.Text = "Много шариков";
+            this.drawRandomBallbutton.Text = "Создать";
             this.drawRandomBallbutton.UseVisualStyleBackColor = true;
             this.drawRandomBallbutton.Click += new System.EventHandler(this.drawRandomBallbutton_Click);
             // 
             // timer
             // 
-            this.timer.Interval = 10;
+            this.timer.Interval = 1;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // restartButton
+            // 
+            this.restartButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.restartButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.restartButton.Location = new System.Drawing.Point(658, 265);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(205, 87);
+            this.restartButton.TabIndex = 2;
+            this.restartButton.Text = "Перезагрузить";
+            this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.ForeColor = System.Drawing.Color.Orange;
+            this.exitButton.Location = new System.Drawing.Point(658, 394);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(205, 87);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(634, 589);
+            this.ClientSize = new System.Drawing.Size(884, 499);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.restartButton);
             this.Controls.Add(this.drawRandomBallbutton);
-            this.Controls.Add(this.moveBallButton);
+            this.Controls.Add(this.stopBallButton);
             this.Name = "MainForm";
             this.Text = "BallGames";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
@@ -76,9 +108,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button moveBallButton;
+        private System.Windows.Forms.Button stopBallButton;
         private System.Windows.Forms.Button drawRandomBallbutton;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button restartButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

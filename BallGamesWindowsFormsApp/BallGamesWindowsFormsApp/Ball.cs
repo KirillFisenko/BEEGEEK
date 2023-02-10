@@ -9,7 +9,8 @@ namespace BallGamesWindowsFormsApp
         protected int vy = 2;
         protected int x;
         protected int y;
-        protected int size = 50;        
+        protected int size = 50;
+        protected Brush brush = Brushes.Green;
 
         public Ball(MainForm form)
         {
@@ -18,8 +19,7 @@ namespace BallGamesWindowsFormsApp
 
         public void Show()
         {
-            var graphics = form.CreateGraphics();
-            var brush = Brushes.Green;
+            var graphics = form.CreateGraphics();            
             var rectangle = new Rectangle(x, y, size, size);
             graphics.FillEllipse(brush, rectangle);
         }

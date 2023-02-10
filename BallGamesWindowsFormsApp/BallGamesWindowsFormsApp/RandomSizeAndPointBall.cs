@@ -1,12 +1,32 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace BallGamesWindowsFormsApp
 {
-    public class RandomSizeAndPointBall : RandomPointBall
-    {        
+    public class RandomSizeAndPointBall : Ball
+    {
+        protected static Random random = new Random();
+        protected List<Brush> colors = new List<Brush>()
+        { Brushes.Brown,
+          Brushes.Violet,
+          Brushes.Green,
+          Brushes.Blue,          
+          Brushes.Red,          
+          Brushes.Yellow,
+          Brushes.Olive,
+          Brushes.Pink,
+          Brushes.Tomato,
+          Brushes.Goldenrod };
+
         public RandomSizeAndPointBall(MainForm form) : base(form)
         {
-            size = random.Next(10, 80);            
+            x = random.Next(70, form.Size.Width / 2);
+            y = random.Next(70, form.Size.Height / 2);
+            vx = random.Next(-10, 10);
+            vy = random.Next(-10, 10);
+            size = random.Next(20, 70);
+            brush = colors[random.Next(0, colors.Count)];
         }
     }
 }
