@@ -23,8 +23,8 @@ namespace BallGamesWindowsFormsApp
         {
             x = random.Next(70, form.Size.Width / 2);
             y = random.Next(70, form.Size.Height / 2);
-            vx = random.Next(-10, 10);
-            vy = random.Next(-10, 10);
+            vx = random.Next(-6, 6);
+            vy = random.Next(-6, 6);
             size = random.Next(20, 70);
             brush = colors[random.Next(0, colors.Count)];
         }

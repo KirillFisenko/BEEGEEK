@@ -4,11 +4,11 @@ namespace BallGamesWindowsFormsApp
 {
     public class Ball
     {
-        private MainForm form;
+        protected MainForm form;
         protected int vx = 2;
         protected int vy = 2;
-        protected int x;
-        protected int y;
+        public int x;
+        public int y;
         protected int size = 50;
         protected Brush brush = Brushes.Green;
 

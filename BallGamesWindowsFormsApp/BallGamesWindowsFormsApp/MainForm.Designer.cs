@@ -34,6 +34,10 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.restartButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.xLabel = new System.Windows.Forms.Label();
+            this.yLabel = new System.Windows.Forms.Label();
+            this.heightLabel = new System.Windows.Forms.Label();
+            this.weitghLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stopBallButton
@@ -89,12 +93,52 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // xLabel
+            // 
+            this.xLabel.AutoSize = true;
+            this.xLabel.Location = new System.Drawing.Point(33, 453);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(24, 13);
+            this.xLabel.TabIndex = 4;
+            this.xLabel.Text = "x = ";
+            // 
+            // yLabel
+            // 
+            this.yLabel.AutoSize = true;
+            this.yLabel.Location = new System.Drawing.Point(33, 477);
+            this.yLabel.Name = "yLabel";
+            this.yLabel.Size = new System.Drawing.Size(24, 13);
+            this.yLabel.TabIndex = 5;
+            this.yLabel.Text = "y = ";
+            // 
+            // heightLabel
+            // 
+            this.heightLabel.AutoSize = true;
+            this.heightLabel.Location = new System.Drawing.Point(226, 453);
+            this.heightLabel.Name = "heightLabel";
+            this.heightLabel.Size = new System.Drawing.Size(48, 13);
+            this.heightLabel.TabIndex = 6;
+            this.heightLabel.Text = "height = ";
+            // 
+            // weitghLabel
+            // 
+            this.weitghLabel.AutoSize = true;
+            this.weitghLabel.Location = new System.Drawing.Point(226, 477);
+            this.weitghLabel.Name = "weitghLabel";
+            this.weitghLabel.Size = new System.Drawing.Size(50, 13);
+            this.weitghLabel.TabIndex = 7;
+            this.weitghLabel.Text = "weitgh = ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 499);
+            this.Controls.Add(this.weitghLabel);
+            this.Controls.Add(this.heightLabel);
+            this.Controls.Add(this.yLabel);
+            this.Controls.Add(this.xLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.restartButton);
             this.Controls.Add(this.drawRandomBallbutton);
@@ -103,6 +147,7 @@
             this.Text = "BallGames";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,6 +158,10 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button restartButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.Label yLabel;
+        private System.Windows.Forms.Label heightLabel;
+        private System.Windows.Forms.Label weitghLabel;
     }
 }
 

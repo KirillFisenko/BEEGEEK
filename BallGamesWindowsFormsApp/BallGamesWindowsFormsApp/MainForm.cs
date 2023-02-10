@@ -8,6 +8,8 @@ namespace BallGamesWindowsFormsApp
     {
         protected List<RandomSizeAndPointBall> randomSizeAndPointBalls = new List<RandomSizeAndPointBall>();
         private int countBalls;
+        private int formWidth = MainForm.ClientSize;
+        private int formHeight;
         public MainForm()
         {
             InitializeComponent();
@@ -16,6 +18,12 @@ namespace BallGamesWindowsFormsApp
         private void stopBallButton_Click(object sender, EventArgs e)
         {
             timer.Stop();
+            xLabel.Text = "x = " + randomSizeAndPointBalls[2].x;
+            yLabel.Text = "y = " + randomSizeAndPointBalls[2].y;
+            
+            heightLabel.Text = "height = " + formWidth;
+            weitghLabel.Text = "weitgh = " + formHeight;
+
             MessageBox.Show("Количество пойманных шаров: " + countBalls);
         }        
 
