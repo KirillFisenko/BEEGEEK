@@ -9,7 +9,7 @@ namespace BallGamesWindowsFormsApp
         protected int vy = 2;
         public int x;
         public int y;
-        protected int size = 50;
+        public int size = 50;
         protected Brush brush = Brushes.Green;
 
         public Ball(MainForm form)

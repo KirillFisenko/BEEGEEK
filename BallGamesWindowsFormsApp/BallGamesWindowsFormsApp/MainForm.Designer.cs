@@ -34,19 +34,16 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.restartButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.xLabel = new System.Windows.Forms.Label();
-            this.yLabel = new System.Windows.Forms.Label();
-            this.heightLabel = new System.Windows.Forms.Label();
-            this.weitghLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stopBallButton
             // 
             this.stopBallButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stopBallButton.ForeColor = System.Drawing.Color.Crimson;
-            this.stopBallButton.Location = new System.Drawing.Point(658, 137);
+            this.stopBallButton.Location = new System.Drawing.Point(12, 450);
             this.stopBallButton.Name = "stopBallButton";
-            this.stopBallButton.Size = new System.Drawing.Size(205, 87);
+            this.stopBallButton.Size = new System.Drawing.Size(205, 37);
             this.stopBallButton.TabIndex = 0;
             this.stopBallButton.Text = "Остановить";
             this.stopBallButton.UseVisualStyleBackColor = true;
@@ -56,9 +53,9 @@
             // 
             this.drawRandomBallbutton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawRandomBallbutton.ForeColor = System.Drawing.Color.DarkCyan;
-            this.drawRandomBallbutton.Location = new System.Drawing.Point(658, 12);
+            this.drawRandomBallbutton.Location = new System.Drawing.Point(12, 12);
             this.drawRandomBallbutton.Name = "drawRandomBallbutton";
-            this.drawRandomBallbutton.Size = new System.Drawing.Size(205, 87);
+            this.drawRandomBallbutton.Size = new System.Drawing.Size(205, 37);
             this.drawRandomBallbutton.TabIndex = 1;
             this.drawRandomBallbutton.Text = "Создать";
             this.drawRandomBallbutton.UseVisualStyleBackColor = true;
@@ -73,9 +70,9 @@
             // 
             this.restartButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.restartButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.restartButton.Location = new System.Drawing.Point(658, 265);
+            this.restartButton.Location = new System.Drawing.Point(667, 12);
             this.restartButton.Name = "restartButton";
-            this.restartButton.Size = new System.Drawing.Size(205, 87);
+            this.restartButton.Size = new System.Drawing.Size(205, 37);
             this.restartButton.TabIndex = 2;
             this.restartButton.Text = "Перезагрузить";
             this.restartButton.UseVisualStyleBackColor = true;
@@ -85,49 +82,24 @@
             // 
             this.exitButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitButton.ForeColor = System.Drawing.Color.Orange;
-            this.exitButton.Location = new System.Drawing.Point(658, 394);
+            this.exitButton.Location = new System.Drawing.Point(667, 450);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(205, 87);
+            this.exitButton.Size = new System.Drawing.Size(205, 37);
             this.exitButton.TabIndex = 3;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // xLabel
+            // label1
             // 
-            this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(33, 453);
-            this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(24, 13);
-            this.xLabel.TabIndex = 4;
-            this.xLabel.Text = "x = ";
-            // 
-            // yLabel
-            // 
-            this.yLabel.AutoSize = true;
-            this.yLabel.Location = new System.Drawing.Point(33, 477);
-            this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(24, 13);
-            this.yLabel.TabIndex = 5;
-            this.yLabel.Text = "y = ";
-            // 
-            // heightLabel
-            // 
-            this.heightLabel.AutoSize = true;
-            this.heightLabel.Location = new System.Drawing.Point(226, 453);
-            this.heightLabel.Name = "heightLabel";
-            this.heightLabel.Size = new System.Drawing.Size(48, 13);
-            this.heightLabel.TabIndex = 6;
-            this.heightLabel.Text = "height = ";
-            // 
-            // weitghLabel
-            // 
-            this.weitghLabel.AutoSize = true;
-            this.weitghLabel.Location = new System.Drawing.Point(226, 477);
-            this.weitghLabel.Name = "weitghLabel";
-            this.weitghLabel.Size = new System.Drawing.Size(50, 13);
-            this.weitghLabel.TabIndex = 7;
-            this.weitghLabel.Text = "weitgh = ";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label1.Location = new System.Drawing.Point(201, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(498, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Создай шарики и поймай как можно больше кнопой \"Остановить\"";
             // 
             // MainForm
             // 
@@ -135,16 +107,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 499);
-            this.Controls.Add(this.weitghLabel);
-            this.Controls.Add(this.heightLabel);
-            this.Controls.Add(this.yLabel);
-            this.Controls.Add(this.xLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.restartButton);
             this.Controls.Add(this.drawRandomBallbutton);
             this.Controls.Add(this.stopBallButton);
             this.Name = "MainForm";
             this.Text = "BallGames";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,10 +128,7 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button restartButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Label xLabel;
-        private System.Windows.Forms.Label yLabel;
-        private System.Windows.Forms.Label heightLabel;
-        private System.Windows.Forms.Label weitghLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
