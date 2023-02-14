@@ -20,6 +20,8 @@ namespace BallGamesWindowsFormsApp
 
         private void stopBallButton_Click(object sender, EventArgs e)
         {
+            stopBallButton.Enabled = false;
+            drawRandomBallbutton.Enabled = true;
             if (countClick == 0)
             {
                 try
@@ -52,12 +54,6 @@ namespace BallGamesWindowsFormsApp
             }
         }
 
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-
         private void timer_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < quantityBalls; i++)
@@ -68,6 +64,8 @@ namespace BallGamesWindowsFormsApp
 
         private void drawRandomBallbutton_Click(object sender, EventArgs e)
         {
+            stopBallButton.Enabled = true;
+            drawRandomBallbutton.Enabled = false;
             if (countClick == 0)
             {
                 for (int i = 0; i < quantityBalls; i++)
@@ -95,7 +93,7 @@ namespace BallGamesWindowsFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            stopBallButton.Enabled = false;
         }
     }
 }

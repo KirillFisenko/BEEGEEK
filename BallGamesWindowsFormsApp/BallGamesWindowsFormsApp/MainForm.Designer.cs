@@ -115,7 +115,6 @@
             this.Name = "MainForm";
             this.Text = "BallGames";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
