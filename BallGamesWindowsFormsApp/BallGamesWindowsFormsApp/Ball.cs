@@ -33,7 +33,7 @@ namespace BallGamesWindowsFormsApp
         private void Clear()
         {
             var graphics = form.CreateGraphics();
-            var brush = Brushes.White;
+            var brush = new SolidBrush(form.BackColor);
             var rectangle = new Rectangle(x, y, size, size);
             graphics.FillEllipse(brush, rectangle);
         }
