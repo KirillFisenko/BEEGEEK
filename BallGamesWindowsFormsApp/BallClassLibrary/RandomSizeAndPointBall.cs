@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace BallGamesWindowsFormsApp
+namespace BallClassLibrary
 {
     public class RandomSizeAndPointBall : Ball
     {
@@ -19,7 +20,7 @@ namespace BallGamesWindowsFormsApp
           Brushes.Tomato,
           Brushes.Goldenrod };
 
-        public RandomSizeAndPointBall(MainForm form) : base(form)
+        public RandomSizeAndPointBall(Form form) : base(form)
         {
             x = random.Next(70, form.Size.Width / 2);
             y = random.Next(70, form.Size.Height / 2);

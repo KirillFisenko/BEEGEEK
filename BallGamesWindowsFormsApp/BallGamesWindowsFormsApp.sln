@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGamesWindowsFormsApp", "BallGamesWindowsFormsApp\BallGamesWindowsFormsApp.csproj", "{1005FD72-5591-4493-B444-83C2FC8756E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGameWithMouseWindowsFormsApp", "BallGameWithMouseWindowsFormsApp\BallGameWithMouseWindowsFormsApp.csproj", "{FFF47E60-10AD-4E2A-8EB5-F22CBA4C83F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallClassLibrary", "BallClassLibrary\BallClassLibrary.csproj", "{101DDA35-821E-418D-BC47-9AD55A8F59B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{1005FD72-5591-4493-B444-83C2FC8756E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1005FD72-5591-4493-B444-83C2FC8756E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1005FD72-5591-4493-B444-83C2FC8756E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFF47E60-10AD-4E2A-8EB5-F22CBA4C83F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFF47E60-10AD-4E2A-8EB5-F22CBA4C83F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFF47E60-10AD-4E2A-8EB5-F22CBA4C83F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFF47E60-10AD-4E2A-8EB5-F22CBA4C83F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

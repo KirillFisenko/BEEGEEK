@@ -1,10 +1,11 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
-namespace BallGamesWindowsFormsApp
+namespace BallClassLibrary
 {
     public class Ball
     {
-        protected MainForm form;
+        protected Form form;
         protected int vx = 2;
         protected int vy = 2;
         public int x;
@@ -12,7 +13,7 @@ namespace BallGamesWindowsFormsApp
         public int size = 50;
         protected Brush brush = Brushes.Green;
 
-        public Ball(MainForm form)
+        public Ball(Form form)
         {
             this.form = form;
         }
