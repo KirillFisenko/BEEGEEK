@@ -6,12 +6,12 @@ namespace BallClassLibrary
     public class Ball
     {
         protected Form form;
-        protected int vx = 2;
-        protected int vy = 2;
+        protected int vx;
+        protected int vy;
         public int x;
         public int y;
-        public int size = 50;
-        protected Brush brush = Brushes.Green;
+        public int size;
+        protected Brush brush;
 
         public Ball(Form form)
         {
@@ -31,7 +31,7 @@ namespace BallClassLibrary
             y += vy;
         }
 
-        private void Clear()
+        public void Clear()
         {
             var graphics = form.CreateGraphics();
             var brush = new SolidBrush(form.BackColor);
@@ -44,6 +44,10 @@ namespace BallClassLibrary
             Clear();
             Go();
             Show();
+        }
+        public bool BallOnBoard()
+        {
+            return x >= 0 && x + size <= form.Size.Width && y >= 0 && y + size <= form.Size.Height;
         }
     }
 }

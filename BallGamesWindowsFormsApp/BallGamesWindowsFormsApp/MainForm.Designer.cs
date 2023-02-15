@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.stopBallButton = new System.Windows.Forms.Button();
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.restartButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,11 +58,6 @@
             this.drawRandomBallbutton.Text = "Создать";
             this.drawRandomBallbutton.UseVisualStyleBackColor = true;
             this.drawRandomBallbutton.Click += new System.EventHandler(this.drawRandomBallbutton_Click);
-            // 
-            // timer
-            // 
-            this.timer.Interval = 1;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // restartButton
             // 
@@ -124,7 +117,6 @@
 
         private System.Windows.Forms.Button stopBallButton;
         private System.Windows.Forms.Button drawRandomBallbutton;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button restartButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label1;

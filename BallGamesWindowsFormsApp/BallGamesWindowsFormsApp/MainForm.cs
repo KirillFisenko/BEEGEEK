@@ -7,12 +7,9 @@ namespace BallGamesWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        protected List<RandomSizeAndPointBall> randomSizeAndPointBalls = new List<RandomSizeAndPointBall>();
+        protected List<MoveBall> moveBalls;
         private int countBalls;
-        private int formWidth = 900;
-        private int formHeight = 538;
         private int quantityBalls = 15;
-        private int countClick = 0;
 
         public MainForm()
         {
@@ -22,69 +19,36 @@ namespace BallGamesWindowsFormsApp
         private void stopBallButton_Click(object sender, EventArgs e)
         {
             stopBallButton.Enabled = false;
-            drawRandomBallbutton.Enabled = true;
-            if (countClick == 0)
+            drawRandomBallbutton.Enabled = true;            
+
+            foreach (var ball in moveBalls)
             {
-                try
+                ball.Stop();
+                if (ball.BallOnBoard())
                 {
-                    timer.Stop();
-
-                    for (int i = 0; i < quantityBalls; i++)
-                    {
-                        var pointUpLeftX = randomSizeAndPointBalls[i].x;
-                        var pointUpLeftY = randomSizeAndPointBalls[i].y;
-                        var pointDownRightX = randomSizeAndPointBalls[i].x + randomSizeAndPointBalls[i].size;
-                        var pointDownRightY = randomSizeAndPointBalls[i].y + randomSizeAndPointBalls[i].size;
-
-                        if (pointUpLeftX >= 0 && pointDownRightX <= formWidth && pointUpLeftY >= 0 && pointDownRightY <= formHeight)
-                        {
-                            countBalls++;
-                        }
-                    }
-                    MessageBox.Show("Количество пойманных шаров: " + countBalls);
-                    countClick++;
-                }
-                catch
-                {
-                    MessageBox.Show("Сначала нужно создать шарики");
+                    countBalls++;
                 }
             }
-            else
-            {
-                MessageBox.Show("Теперь нужно очистить поле кнопкой Перезагрузить");
-            }
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            for (int i = 0; i < quantityBalls; i++)
-            {
-                randomSizeAndPointBalls[i].Move();
-            }
-        }
+            MessageBox.Show("Количество пойманных шаров: " + countBalls);
+        }        
 
         private void drawRandomBallbutton_Click(object sender, EventArgs e)
         {
             stopBallButton.Enabled = true;
             drawRandomBallbutton.Enabled = false;
-            if (countClick == 0)
+
+            moveBalls = new List<MoveBall>();
+            for (int i = 0; i < quantityBalls; i++)
             {
-                for (int i = 0; i < quantityBalls; i++)
-                {
-                    var randomSizeAndPointBall = new RandomSizeAndPointBall(this);
-                    randomSizeAndPointBalls.Add(randomSizeAndPointBall);
-                }
-                timer.Start();
-            }
-            else
-            {
-                MessageBox.Show("Теперь нужно очистить поле кнопкой Перезагрузить");
-            }
+                var moveBall = new MoveBall(this);
+                moveBalls.Add(moveBall);
+                moveBall.Start();
+            }            
         }
 
         private void restartButton_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
+        {            
+            moveBalls.Clear();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
