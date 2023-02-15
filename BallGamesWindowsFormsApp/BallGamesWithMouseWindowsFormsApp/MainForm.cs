@@ -68,7 +68,7 @@ namespace BallGamesWithMouseWindowsFormsApp
                     {                        
                         ball.Stop();
                         ball.brush = Brushes.Black;
-                        ball.Show();
+                        ball.Show();                        
                         countBalls++;                        
                     }
                 }
@@ -90,6 +90,11 @@ namespace BallGamesWithMouseWindowsFormsApp
                 }
             }
             return true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
