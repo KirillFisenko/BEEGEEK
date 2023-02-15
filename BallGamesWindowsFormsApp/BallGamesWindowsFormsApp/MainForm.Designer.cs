@@ -32,7 +32,7 @@
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
             this.restartButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.infoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stopBallButton
@@ -67,7 +67,7 @@
             this.restartButton.Name = "restartButton";
             this.restartButton.Size = new System.Drawing.Size(205, 37);
             this.restartButton.TabIndex = 2;
-            this.restartButton.Text = "Перезагрузить";
+            this.restartButton.Text = "Очистить";
             this.restartButton.UseVisualStyleBackColor = true;
             this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
@@ -83,16 +83,16 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // label1
+            // infoLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label1.Location = new System.Drawing.Point(201, 227);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(498, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Создай шарики и поймай как можно больше кнопой \"Остановить\"";
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.infoLabel.ForeColor = System.Drawing.Color.BlueViolet;
+            this.infoLabel.Location = new System.Drawing.Point(245, 26);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(398, 16);
+            this.infoLabel.TabIndex = 4;
+            this.infoLabel.Text = "Создай шарики и поймай как можно больше кнопой \"Остановить\"";
             // 
             // MainForm
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 499);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.restartButton);
             this.Controls.Add(this.drawRandomBallbutton);
@@ -119,7 +119,7 @@
         private System.Windows.Forms.Button drawRandomBallbutton;
         private System.Windows.Forms.Button restartButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label infoLabel;
     }
 }
 

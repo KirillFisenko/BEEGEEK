@@ -19,7 +19,7 @@ namespace BallGamesWindowsFormsApp
         private void stopBallButton_Click(object sender, EventArgs e)
         {
             stopBallButton.Enabled = false;
-            drawRandomBallbutton.Enabled = true;            
+            restartButton.Enabled = true;
 
             foreach (var ball in moveBalls)
             {
@@ -34,8 +34,10 @@ namespace BallGamesWindowsFormsApp
 
         private void drawRandomBallbutton_Click(object sender, EventArgs e)
         {
-            stopBallButton.Enabled = true;
+            stopBallButton.Enabled = true;            
             drawRandomBallbutton.Enabled = false;
+            restartButton.Enabled = false;
+            infoLabel.Visible = false;
 
             moveBalls = new List<MoveBall>();
             for (int i = 0; i < quantityBalls; i++)
@@ -47,8 +49,16 @@ namespace BallGamesWindowsFormsApp
         }
 
         private void restartButton_Click(object sender, EventArgs e)
-        {            
+        {
+            drawRandomBallbutton.Enabled = true;
+            infoLabel.Visible = true;
+
+            foreach (var ball in moveBalls)
+            {
+                ball.Clear();                
+            }
             moveBalls.Clear();
+            countBalls = 0;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -59,6 +69,8 @@ namespace BallGamesWindowsFormsApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             stopBallButton.Enabled = false;
+            restartButton.Enabled = false;
+            infoLabel.Visible = true;
         }
     }
 }
