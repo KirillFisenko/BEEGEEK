@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.infoLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.restartButton = new System.Windows.Forms.Button();
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.countBallslabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // infoLabel
@@ -104,6 +106,10 @@
             this.countBallslabel.TabIndex = 11;
             this.countBallslabel.Text = "0";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +139,7 @@
         private System.Windows.Forms.Button drawRandomBallbutton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label countBallslabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

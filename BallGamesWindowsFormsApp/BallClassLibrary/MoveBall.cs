@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -27,12 +28,12 @@ namespace BallClassLibrary
 
         public void Stop()
         {
-            timer.Stop();
+            timer.Stop();            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Move();
+            Move();            
         }
     }
 }

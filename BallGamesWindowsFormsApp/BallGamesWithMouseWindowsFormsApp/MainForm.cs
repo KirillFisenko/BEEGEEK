@@ -65,21 +65,18 @@ namespace BallGamesWithMouseWindowsFormsApp
                 foreach (var ball in moveBalls)
                 {
                     if (ball.IsMovable() && ball.BallOnBoard() && ball.ClickIsOnBall(e.X, e.Y))
-                    {
-                        ball.brush = Brushes.Black;
+                    {                        
                         ball.Stop();
+                        ball.brush = Brushes.Black;
+                        ball.Show();
                         countBalls++;                        
                     }
                 }
                 countBallslabel.Text = countBalls.ToString();
-            }
-            if (EndOfGame())
-            {
-                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());
-            }
+            }            
         }
 
-        private bool EndOfGame()
+        public bool EndOfGame()
         {            
             foreach (var ball in moveBalls)
             {
