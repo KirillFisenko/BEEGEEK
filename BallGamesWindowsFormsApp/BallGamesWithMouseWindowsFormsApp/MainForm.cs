@@ -94,7 +94,10 @@ namespace BallGamesWithMouseWindowsFormsApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            if (EndOfGame())
+            {                
+                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());
+            }
         }
     }
 }
