@@ -70,7 +70,8 @@ namespace BallGamesWithMouseWindowsFormsApp
                 {
                     if (ball.IsMovable() && ball.BallOnBoard() && ball.ClickIsOnBall(e.X, e.Y))
                     {                        
-                        ball.Stop();                                                
+                        ball.Stop();
+                        
                         countBalls++;                        
                     }
                 }
@@ -96,10 +97,18 @@ namespace BallGamesWithMouseWindowsFormsApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            foreach (var ball in moveBalls)
+            {
+                if (!ball.IsMovable())
+                {
+                    ball.Show();
+                }
+            }
+
             if (EndOfGame())
             {
                 timer1.Stop();
-                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());                
+                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());
             }
         }
     }
