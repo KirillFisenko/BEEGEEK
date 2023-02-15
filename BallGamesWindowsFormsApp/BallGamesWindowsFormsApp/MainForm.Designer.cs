@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.stopBallButton = new System.Windows.Forms.Button();
             this.drawRandomBallbutton = new System.Windows.Forms.Button();
             this.restartButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.infoLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // stopBallButton
@@ -94,6 +96,10 @@
             this.infoLabel.TabIndex = 4;
             this.infoLabel.Text = "Создай шарики и поймай как можно больше кнопой \"Остановить\"";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +126,7 @@
         private System.Windows.Forms.Button restartButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

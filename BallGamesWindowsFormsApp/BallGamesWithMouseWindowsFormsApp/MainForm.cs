@@ -25,8 +25,10 @@ namespace BallGamesWithMouseWindowsFormsApp
         private void drawRandomBallbutton_Click(object sender, EventArgs e)
         {            
             drawRandomBallbutton.Enabled = false;
-            restartButton.Enabled = false;
+            restartButton.Enabled = true;
             infoLabel.Visible = false;
+
+            timer1.Start();
 
             moveBalls = new List<MoveBall>();
             for (int i = 0; i < quantityBalls; i++)
@@ -34,22 +36,24 @@ namespace BallGamesWithMouseWindowsFormsApp
                 var moveBall = new MoveBall(this);
                 moveBalls.Add(moveBall);
                 moveBall.Start();
-            }
-            
+            }            
         }
 
         private void restartButton_Click(object sender, EventArgs e)
         {
             drawRandomBallbutton.Enabled = true;
-            infoLabel.Visible = true;
+            infoLabel.Visible = true;                        
 
             foreach (var ball in moveBalls)
             {
+                ball.Stop();
                 ball.Clear();
             }
             moveBalls.Clear();
             countBalls = 0;
             countBallslabel.Text = countBalls.ToString();
+
+            timer1.Stop();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -58,17 +62,15 @@ namespace BallGamesWithMouseWindowsFormsApp
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {            
-            restartButton.Enabled = true;                        
+        {          
+                                    
             if (moveBalls != null)
             {
                 foreach (var ball in moveBalls)
                 {
                     if (ball.IsMovable() && ball.BallOnBoard() && ball.ClickIsOnBall(e.X, e.Y))
                     {                        
-                        ball.Stop();
-                        ball.brush = Brushes.Black;
-                        ball.Show();                        
+                        ball.Stop();                                                
                         countBalls++;                        
                     }
                 }
@@ -76,11 +78,11 @@ namespace BallGamesWithMouseWindowsFormsApp
             }            
         }
 
-        public bool EndOfGame()
+        private bool EndOfGame()
         {            
             foreach (var ball in moveBalls)
             {
-                if (ball.BallOnBoard())
+                if (ball.BallOnBoard() && ball.IsMovable())
                 {
                     return false;
                 }
@@ -95,8 +97,9 @@ namespace BallGamesWithMouseWindowsFormsApp
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (EndOfGame())
-            {                
-                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());
+            {
+                timer1.Stop();
+                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());                
             }
         }
     }

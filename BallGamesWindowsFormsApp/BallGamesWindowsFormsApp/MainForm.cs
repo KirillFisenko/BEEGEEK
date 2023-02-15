@@ -28,8 +28,7 @@ namespace BallGamesWindowsFormsApp
                 {
                     countBalls++;
                 }
-            }
-            MessageBox.Show("Количество пойманных шаров: " + countBalls);
+            }            
         }        
 
         private void drawRandomBallbutton_Click(object sender, EventArgs e)
@@ -38,6 +37,8 @@ namespace BallGamesWindowsFormsApp
             drawRandomBallbutton.Enabled = false;
             restartButton.Enabled = false;
             infoLabel.Visible = false;
+
+            timer1.Start();
 
             moveBalls = new List<MoveBall>();
             for (int i = 0; i < quantityBalls; i++)
@@ -59,6 +60,7 @@ namespace BallGamesWindowsFormsApp
             }
             moveBalls.Clear();
             countBalls = 0;
+            timer1.Stop();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -71,6 +73,33 @@ namespace BallGamesWindowsFormsApp
             stopBallButton.Enabled = false;
             restartButton.Enabled = false;
             infoLabel.Visible = true;
+        }
+
+        private bool EndOfGame()
+        {
+            foreach (var ball in moveBalls)
+            {
+                if (ball.BallOnBoard() && ball.IsMovable())
+                {
+                    return false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (EndOfGame())
+            {
+                timer1.Stop();
+                restartButton.Enabled = true;
+                stopBallButton.Enabled = false;
+                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());                
+            }
         }
     }
 }
