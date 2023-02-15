@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGamesWindowsFormsApp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallClassLibrary", "BallClassLibrary\BallClassLibrary.csproj", "{101DDA35-821E-418D-BC47-9AD55A8F59B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGamesWithMouseWindowsFormsApp", "BallGamesWithMouseWindowsFormsApp\BallGamesWithMouseWindowsFormsApp.csproj", "{635F5DD5-5728-4458-83A8-FC76CC5CE9CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{101DDA35-821E-418D-BC47-9AD55A8F59B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635F5DD5-5728-4458-83A8-FC76CC5CE9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635F5DD5-5728-4458-83A8-FC76CC5CE9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635F5DD5-5728-4458-83A8-FC76CC5CE9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635F5DD5-5728-4458-83A8-FC76CC5CE9CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
