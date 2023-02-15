@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using BallClassLibrary;
 
@@ -34,6 +35,7 @@ namespace BallGamesWithMouseWindowsFormsApp
                 moveBalls.Add(moveBall);
                 moveBall.Start();
             }
+            
         }
 
         private void restartButton_Click(object sender, EventArgs e)
@@ -47,6 +49,7 @@ namespace BallGamesWithMouseWindowsFormsApp
             }
             moveBalls.Clear();
             countBalls = 0;
+            countBallslabel.Text = countBalls.ToString();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -56,17 +59,40 @@ namespace BallGamesWithMouseWindowsFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {            
-            restartButton.Enabled = true;
+            restartButton.Enabled = true;                        
+            if (moveBalls != null)
+            {
+                foreach (var ball in moveBalls)
+                {
+                    if (ball.IsMovable() && ball.BallOnBoard() && ball.ClickIsOnBall(e.X, e.Y))
+                    {
+                        ball.brush = Brushes.Black;
+                        ball.Stop();
+                        countBalls++;                        
+                    }
+                }
+                countBallslabel.Text = countBalls.ToString();
+            }
+            if (EndOfGame())
+            {
+                MessageBox.Show("Конец игры. Количество пойманных шариков = " + countBalls.ToString());
+            }
+        }
 
+        private bool EndOfGame()
+        {            
             foreach (var ball in moveBalls)
             {
-                ball.Stop();
                 if (ball.BallOnBoard())
                 {
-                    countBalls++;
+                    return false;
+                }
+                else 
+                {
+                    continue;
                 }
             }
-            MessageBox.Show("Количество пойманных шаров: " + countBalls);
+            return true;
         }
     }
 }

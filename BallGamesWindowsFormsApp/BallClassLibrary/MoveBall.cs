@@ -15,6 +15,11 @@ namespace BallClassLibrary
             timer.Tick += Timer_Tick;
         }
 
+        public bool IsMovable()
+        {
+            return timer.Enabled;
+        }
+
         public void Start()
         {
             timer.Start();

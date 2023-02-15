@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BallClassLibrary
@@ -11,7 +12,7 @@ namespace BallClassLibrary
         public int x;
         public int y;
         public int size;
-        protected Brush brush;
+        public Brush brush;
 
         public Ball(Form form)
         {
@@ -20,7 +21,7 @@ namespace BallClassLibrary
 
         public void Show()
         {
-            var graphics = form.CreateGraphics();            
+            var graphics = form.CreateGraphics();
             var rectangle = new Rectangle(x, y, size, size);
             graphics.FillEllipse(brush, rectangle);
         }
@@ -48,6 +49,14 @@ namespace BallClassLibrary
         public bool BallOnBoard()
         {
             return x >= 0 && x + size <= form.Size.Width && y >= 0 && y + size <= form.Size.Height;
+        }
+
+        public bool ClickIsOnBall(int mouseX, int mouseY)
+        {
+            var xO = x + size / 2;
+            var yO = y + size / 2;
+            var R = size / 2;
+            return Math.Pow(mouseX - xO, 2) + Math.Pow(mouseY - yO, 2) <= Math.Pow(R, 2);
         }
     }
 }
