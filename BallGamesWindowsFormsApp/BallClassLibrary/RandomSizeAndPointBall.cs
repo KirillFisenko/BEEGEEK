@@ -8,8 +8,7 @@ namespace BallClassLibrary
     public class RandomSizeAndPointBall : Ball
     {
         protected static Random random = new Random();
-        protected List<int> vxRandom;
-        protected List<int> vyRandom;
+
         protected List<Brush> colors = new List<Brush>()
         { Brushes.Brown,
           Brushes.Violet,
@@ -24,14 +23,10 @@ namespace BallClassLibrary
 
         public RandomSizeAndPointBall(Form form) : base(form)
         {
-            x = random.Next(70, form.Size.Width / 2);
-            y = random.Next(70, form.Size.Height / 2);
-            vxRandom = new List<int>() { random.Next(-2, -1), random.Next(1, 2) };
-            vyRandom = new List<int>() { random.Next(-2, -1), random.Next(1, 2) };
-            vx = vxRandom[random.Next(0, 2)];
-            vy = vyRandom[random.Next(0, 2)];
-            size = random.Next(40, 70);
+            centerX = random.Next(LeftSide(), RightSide());
+            centerY = random.Next(TopSide(), DownSide());            
+            radius = random.Next(10, 40);
             brush = colors[random.Next(0, colors.Count)];
-        }
+        }        
     }
 }

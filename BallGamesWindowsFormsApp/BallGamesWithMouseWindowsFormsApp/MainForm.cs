@@ -8,7 +8,7 @@ namespace BallGamesWithMouseWindowsFormsApp
 {    
     public partial class MainForm : Form
     {
-        protected List<MoveBall> moveBalls;
+        protected List<Ball> Balls;
         private int countBalls;
         private int quantityBalls = 15;
         public MainForm()
@@ -30,11 +30,11 @@ namespace BallGamesWithMouseWindowsFormsApp
 
             timer1.Start();
 
-            moveBalls = new List<MoveBall>();
+            Balls = new List<Ball>();
             for (int i = 0; i < quantityBalls; i++)
             {
                 var moveBall = new MoveBall(this);
-                moveBalls.Add(moveBall);
+                Balls.Add(moveBall);
                 moveBall.Start();
             }            
         }
@@ -44,12 +44,12 @@ namespace BallGamesWithMouseWindowsFormsApp
             drawRandomBallbutton.Enabled = true;
             infoLabel.Visible = true;                        
 
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 ball.Stop();
                 ball.Clear();
             }
-            moveBalls.Clear();
+            Balls.Clear();
             countBalls = 0;
             countBallslabel.Text = countBalls.ToString();
 
@@ -62,13 +62,12 @@ namespace BallGamesWithMouseWindowsFormsApp
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {          
-                                    
-            if (moveBalls != null)
+        {                                              
+            if (Balls != null)
             {
-                foreach (var ball in moveBalls)
+                foreach (var ball in Balls)
                 {
-                    if (ball.IsMovable() && ball.BallOnBoard() && ball.ClickIsOnBall(e.X, e.Y))
+                    if (ball.IsMovable() && ball.BallOnBoard() && ball.Exists(e.X, e.Y))
                     {                        
                         ball.Stop();
                         
@@ -81,7 +80,7 @@ namespace BallGamesWithMouseWindowsFormsApp
 
         private bool EndOfGame()
         {            
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 if (ball.BallOnBoard() && ball.IsMovable())
                 {
@@ -97,7 +96,7 @@ namespace BallGamesWithMouseWindowsFormsApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 if (!ball.IsMovable())
                 {

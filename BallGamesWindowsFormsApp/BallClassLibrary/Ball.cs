@@ -7,37 +7,58 @@ namespace BallClassLibrary
     public class Ball
     {
         protected Form form;
-        protected int vx;
-        protected int vy;
-        public int x;
-        public int y;
-        public int size;
-        public Brush brush;
+        private Timer timer;
+
+        protected int vx = 5;
+        protected int vy = 5;
+
+        public int centerX = 5;
+        public int centerY = 5;
+        public int radius = 10;
+
+        public Brush brush = Brushes.Black;
 
         public Ball(Form form)
         {
             this.form = form;
+            timer = new Timer();
+            timer.Interval = 20;
+            timer.Tick += Timer_Tick;
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Move();
+        }
+        public bool IsMovable()
+        {
+            return timer.Enabled;
+        }
+
+        public void Start()
+        {
+            timer.Start();
+        }
+
+        public void Stop()
+        {
+            timer.Stop();
         }
 
         public void Show()
-        {
-            var graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(x, y, size, size);
-            graphics.FillEllipse(brush, rectangle);
+        {            
+            Draw(brush);
         }
 
         private void Go()
         {
-            x += vx;
-            y += vy;
+            centerX += vx;
+            centerY += vy;
         }
 
         public void Clear()
         {
-            var graphics = form.CreateGraphics();
             var brush = new SolidBrush(form.BackColor);
-            var rectangle = new Rectangle(x, y, size, size);
-            graphics.FillEllipse(brush, rectangle);
+            Draw(brush);
         }
 
         public void Move()
@@ -46,17 +67,41 @@ namespace BallClassLibrary
             Go();
             Show();
         }
-        public bool BallOnBoard()
+
+        public int LeftSide()
         {
-            return x >= 0 && x + size <= form.Size.Width && y >= 0 && y + size <= form.Size.Height;
+            return radius;
+        }
+        public int RightSide()
+        {
+            return form.ClientSize.Width - radius;
+        }
+        public int TopSide()
+        {
+            return radius;
+        }
+        public int DownSide()
+        {
+            return form.ClientSize.Height - radius;
         }
 
-        public bool ClickIsOnBall(int mouseX, int mouseY)
+        public bool BallOnBoard()
         {
-            var xO = x + size / 2;
-            var yO = y + size / 2;
-            var R = size / 2;
-            return Math.Pow(mouseX - xO, 2) + Math.Pow(mouseY - yO, 2) <= Math.Pow(R, 2);
+            return centerX >= LeftSide() && centerX <= RightSide() && centerY >= TopSide() && centerY <= DownSide();
+        }
+
+        public bool Exists(int pointX, int pointY)
+        {
+            var dx = pointX - centerX;
+            var dy = pointY - centerY;
+            return dx * dx + dy * dy <= radius * radius;
+        }
+
+        private void Draw(Brush brush)
+        {
+            var graphics = form.CreateGraphics();
+            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+            graphics.FillEllipse(brush, rectangle);
         }
     }
 }

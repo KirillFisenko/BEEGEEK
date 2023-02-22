@@ -7,7 +7,7 @@ namespace BallGamesWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        protected List<MoveBall> moveBalls;
+        protected List<Ball> Balls;
         private int countBalls;
         private int quantityBalls = 15;
 
@@ -21,7 +21,7 @@ namespace BallGamesWindowsFormsApp
             stopBallButton.Enabled = false;
             restartButton.Enabled = true;
 
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 ball.Stop();
                 if (ball.BallOnBoard())
@@ -40,11 +40,11 @@ namespace BallGamesWindowsFormsApp
 
             timer1.Start();
 
-            moveBalls = new List<MoveBall>();
+            Balls = new List<Ball>();
             for (int i = 0; i < quantityBalls; i++)
             {
                 var moveBall = new MoveBall(this);
-                moveBalls.Add(moveBall);
+                Balls.Add(moveBall);
                 moveBall.Start();
             }            
         }
@@ -54,11 +54,11 @@ namespace BallGamesWindowsFormsApp
             drawRandomBallbutton.Enabled = true;
             infoLabel.Visible = true;
 
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 ball.Clear();                
             }
-            moveBalls.Clear();
+            Balls.Clear();
             countBalls = 0;
             timer1.Stop();
         }
@@ -77,7 +77,7 @@ namespace BallGamesWindowsFormsApp
 
         private bool EndOfGame()
         {
-            foreach (var ball in moveBalls)
+            foreach (var ball in Balls)
             {
                 if (ball.BallOnBoard() && ball.IsMovable())
                 {

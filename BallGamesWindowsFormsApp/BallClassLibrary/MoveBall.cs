@@ -7,33 +7,21 @@ namespace BallClassLibrary
 {
     public class MoveBall : RandomSizeAndPointBall
     {
-        private Timer timer;
-
-        public MoveBall(Form form) : base(form)
+        public MoveBall(Form form) : base(form) 
         {
-            timer = new Timer();
-            timer.Interval = 20;
-            timer.Tick += Timer_Tick;
+            vx = GenerateRandomProjection();
+            vy = GenerateRandomProjection();
         }
 
-        public bool IsMovable()
+        private int GenerateRandomProjection()
         {
-            return timer.Enabled;
+            var randomDouble = random.NextDouble();
+            var sign = 1;
+            if (randomDouble < 0.5)
+            {
+                sign = -1;
+            }
+            return random.Next(2, 5) * sign;
         }
-
-        public void Start()
-        {
-            timer.Start();
-        }
-
-        public void Stop()
-        {
-            timer.Stop();            
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Move();            
-        }
-    }
+    }    
 }
