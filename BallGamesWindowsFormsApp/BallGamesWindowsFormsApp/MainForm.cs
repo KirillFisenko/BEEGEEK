@@ -45,7 +45,7 @@ namespace BallGamesWindowsFormsApp
             {
                 var moveBall = new MoveBall(this);
                 Balls.Add(moveBall);
-                moveBall.Start();
+                moveBall.Start();               
             }            
         }
 

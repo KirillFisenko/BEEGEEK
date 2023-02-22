@@ -49,10 +49,10 @@ namespace BallClassLibrary
             Draw(brush);
         }
 
-        private void Go()
+        protected virtual void Go()
         {
             centerX += vx;
-            centerY += vy;
+            centerY += vy;            
         }
 
         public void Clear()
