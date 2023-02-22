@@ -12,9 +12,9 @@ namespace BallClassLibrary
         protected int vx = 5;
         protected int vy = 5;
 
-        public int centerX = 5;
-        public int centerY = 5;
-        public int radius = 10;
+        public int centerX = 50;
+        public int centerY = 50;
+        public int radius = 30;
 
         public Brush brush = Brushes.Black;
 
@@ -27,7 +27,7 @@ namespace BallClassLibrary
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Move();
+            Show();
         }
         public bool IsMovable()
         {

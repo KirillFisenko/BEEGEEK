@@ -9,6 +9,7 @@ namespace BallClassLibrary
 {
     public class BillyardBall : MoveBall
     {
+        public event EventHandler<HitEventArgs> OnHited;
         public BillyardBall(Form form) : base(form)
         {
 
@@ -18,13 +19,25 @@ namespace BallClassLibrary
         {
             base.Go();
 
-            if (centerX <= LeftSide() || centerX >= RightSide())
+            if (centerX <= LeftSide())
             {
                 vx = -vx;
+                OnHited.Invoke(this, new HitEventArgs(Side.Left));
             }
-            if (centerY <= TopSide() || centerY >= DownSide())
+            if (centerX >= RightSide())
+            {
+                vx = -vx;
+                OnHited.Invoke(this, new HitEventArgs(Side.Right));
+            }
+            if (centerY <= TopSide())
             {
                 vy = -vy;
+                OnHited.Invoke(this, new HitEventArgs(Side.Top));
+            }
+            if (centerY >= DownSide())
+            {
+                vy = -vy;
+                OnHited.Invoke(this, new HitEventArgs(Side.Down));
             }
         }
     }
