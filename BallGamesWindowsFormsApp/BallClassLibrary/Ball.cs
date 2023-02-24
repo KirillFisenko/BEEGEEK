@@ -27,7 +27,7 @@ namespace BallClassLibrary
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Show();
+            Move();
         }
         public bool IsMovable()
         {
