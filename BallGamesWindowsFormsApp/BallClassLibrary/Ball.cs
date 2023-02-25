@@ -100,7 +100,7 @@ namespace BallClassLibrary
         private void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);            
             graphics.FillEllipse(brush, rectangle);
         }
     }

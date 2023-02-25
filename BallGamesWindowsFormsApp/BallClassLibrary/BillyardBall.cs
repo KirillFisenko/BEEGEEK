@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,14 @@ namespace BallClassLibrary
         public event EventHandler<HitEventArgs> OnHited;
         public BillyardBall(Form form) : base(form)
         {
-
+            if (centerX < form.ClientSize.Width / 2)
+            {
+                brush = Brushes.Blue;
+            }
+            else
+            {
+                brush = Brushes.Red;
+            }
         }
 
         protected override void Go()
