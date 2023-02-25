@@ -23,9 +23,9 @@ namespace BallClassLibrary
 
         public RandomSizeAndPointBall(Form form) : base(form)
         {
-            centerX = random.Next(LeftSide(), RightSide());
-            centerY = random.Next(TopSide(), DownSide());            
             radius = random.Next(10, 40);
+            centerX = random.Next(LeftSide(), RightSide());
+            centerY = random.Next(TopSide(), DownSide());
             brush = colors[random.Next(0, colors.Count)];
         }        
     }
