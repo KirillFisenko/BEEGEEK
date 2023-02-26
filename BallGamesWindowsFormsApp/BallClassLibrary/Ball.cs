@@ -27,7 +27,7 @@ namespace BallClassLibrary
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Move();
+            Move();           
         }
         public bool IsMovable()
         {
@@ -44,7 +44,7 @@ namespace BallClassLibrary
             timer.Stop();
         }
 
-        public void Show()
+        public virtual void Show()
         {            
             Draw(brush);
         }
@@ -101,7 +101,7 @@ namespace BallClassLibrary
         {
             var graphics = form.CreateGraphics();
             var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);            
-            graphics.FillEllipse(brush, rectangle);
+            graphics.FillEllipse(brush, rectangle);            
         }
     }
 }
