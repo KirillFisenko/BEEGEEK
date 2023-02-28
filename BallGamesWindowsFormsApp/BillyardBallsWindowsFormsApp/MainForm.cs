@@ -39,6 +39,7 @@ namespace BillyardBallsWindowsFormsApp
                 ball.OnHited += Ball_OnHited;
                 ball.Start();
             }
+            timer1.Enabled = !timer1.Enabled;
         }
         private void Ball_OnHited(object sender, HitEventArgs e)
         {

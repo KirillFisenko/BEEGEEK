@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.leftRedLabel = new System.Windows.Forms.Label();
             this.rightRedLabel = new System.Windows.Forms.Label();
             this.topBlueLabel = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.downRedLabel = new System.Windows.Forms.Label();
             this.leftBlueLabel = new System.Windows.Forms.Label();
             this.rightBlueLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // leftRedLabel
@@ -158,6 +160,7 @@
         private System.Windows.Forms.Label downRedLabel;
         private System.Windows.Forms.Label leftBlueLabel;
         private System.Windows.Forms.Label rightBlueLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
