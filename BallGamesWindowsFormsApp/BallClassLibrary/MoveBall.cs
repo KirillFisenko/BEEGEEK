@@ -7,21 +7,10 @@ namespace BallClassLibrary
 {
     public class MoveBall : RandomSizeAndPointBall
     {
-        public MoveBall(Form form) : base(form) 
+        public MoveBall(Form form) : base(form)
         {
-            vx = GenerateRandomProjection();
-            vy = GenerateRandomProjection();
+            vx = (float)random.NextDouble() * 10 - 5;
+            vy = (float)random.NextDouble() * 10 - 5;
         }
-
-        private int GenerateRandomProjection()
-        {
-            var randomDouble = random.NextDouble();
-            var sign = 1;
-            if (randomDouble < 0.5)
-            {
-                sign = -1;
-            }
-            return random.Next(3, 8) * sign;
-        }
-    }    
+    }
 }

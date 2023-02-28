@@ -9,11 +9,11 @@ namespace BallClassLibrary
         protected Form form;
         public Timer timer;
 
-        protected int vx = 5;
-        protected int vy = 5;
+        protected float vx = 5;
+        protected float vy = 5;
 
-        public int centerX = 50;
-        public int centerY = 50;
+        public float centerX = 50;
+        public float centerY = 50;
         public int radius = 30;
 
         public Brush brush = Brushes.Black;
@@ -105,7 +105,7 @@ namespace BallClassLibrary
         private void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+            var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
             graphics.FillEllipse(brush, rectangle);
         }
     }

@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BallClassLibrary\BallClassLibrary.csproj">
+      <Project>{101dda35-821e-418d-bc47-9ad55a8f59b7}</Project>
+      <Name>BallClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

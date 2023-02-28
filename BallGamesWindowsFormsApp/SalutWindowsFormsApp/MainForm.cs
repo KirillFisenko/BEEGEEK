@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BallClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace SalutWindowsFormsApp
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            var random = new Random();
+            var count = random.Next(1, 15);
+            
+            for (var i = 0; i < count; i++)
+            {
+                var salut = new SalutBall(this, e.X, e.Y);
+                salut.Start();
+            }
         }
     }
 }
