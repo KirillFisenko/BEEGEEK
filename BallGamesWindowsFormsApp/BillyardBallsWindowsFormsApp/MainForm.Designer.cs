@@ -28,64 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.leftLabel = new System.Windows.Forms.Label();
-            this.rightLabel = new System.Windows.Forms.Label();
-            this.topLabel = new System.Windows.Forms.Label();
-            this.downLabel = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.leftRedLabel = new System.Windows.Forms.Label();
+            this.rightRedLabel = new System.Windows.Forms.Label();
+            this.topBlueLabel = new System.Windows.Forms.Label();
+            this.downBlueLabel = new System.Windows.Forms.Label();
+            this.topRedLabel = new System.Windows.Forms.Label();
+            this.downRedLabel = new System.Windows.Forms.Label();
+            this.leftBlueLabel = new System.Windows.Forms.Label();
+            this.rightBlueLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // leftLabel
+            // leftRedLabel
             // 
-            this.leftLabel.AutoSize = true;
-            this.leftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.leftLabel.Location = new System.Drawing.Point(12, 187);
-            this.leftLabel.Name = "leftLabel";
-            this.leftLabel.Size = new System.Drawing.Size(21, 24);
-            this.leftLabel.TabIndex = 0;
-            this.leftLabel.Text = "0";
+            this.leftRedLabel.AutoSize = true;
+            this.leftRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.leftRedLabel.ForeColor = System.Drawing.Color.Red;
+            this.leftRedLabel.Location = new System.Drawing.Point(12, 158);
+            this.leftRedLabel.Name = "leftRedLabel";
+            this.leftRedLabel.Size = new System.Drawing.Size(21, 24);
+            this.leftRedLabel.TabIndex = 0;
+            this.leftRedLabel.Text = "0";
             // 
-            // rightLabel
+            // rightRedLabel
             // 
-            this.rightLabel.AutoSize = true;
-            this.rightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rightLabel.Location = new System.Drawing.Point(767, 187);
-            this.rightLabel.Name = "rightLabel";
-            this.rightLabel.Size = new System.Drawing.Size(21, 24);
-            this.rightLabel.TabIndex = 1;
-            this.rightLabel.Text = "0";
+            this.rightRedLabel.AutoSize = true;
+            this.rightRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rightRedLabel.ForeColor = System.Drawing.Color.Red;
+            this.rightRedLabel.Location = new System.Drawing.Point(767, 158);
+            this.rightRedLabel.Name = "rightRedLabel";
+            this.rightRedLabel.Size = new System.Drawing.Size(21, 24);
+            this.rightRedLabel.TabIndex = 1;
+            this.rightRedLabel.Text = "0";
             // 
-            // topLabel
+            // topBlueLabel
             // 
-            this.topLabel.AutoSize = true;
-            this.topLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.topLabel.Location = new System.Drawing.Point(393, 9);
-            this.topLabel.Name = "topLabel";
-            this.topLabel.Size = new System.Drawing.Size(21, 24);
-            this.topLabel.TabIndex = 2;
-            this.topLabel.Text = "0";
+            this.topBlueLabel.AutoSize = true;
+            this.topBlueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.topBlueLabel.ForeColor = System.Drawing.Color.Blue;
+            this.topBlueLabel.Location = new System.Drawing.Point(355, 9);
+            this.topBlueLabel.Name = "topBlueLabel";
+            this.topBlueLabel.Size = new System.Drawing.Size(21, 24);
+            this.topBlueLabel.TabIndex = 2;
+            this.topBlueLabel.Text = "0";
             // 
-            // downLabel
+            // downBlueLabel
             // 
-            this.downLabel.AutoSize = true;
-            this.downLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.downLabel.Location = new System.Drawing.Point(393, 417);
-            this.downLabel.Name = "downLabel";
-            this.downLabel.Size = new System.Drawing.Size(21, 24);
-            this.downLabel.TabIndex = 3;
-            this.downLabel.Text = "0";
+            this.downBlueLabel.AutoSize = true;
+            this.downBlueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.downBlueLabel.ForeColor = System.Drawing.Color.Blue;
+            this.downBlueLabel.Location = new System.Drawing.Point(355, 417);
+            this.downBlueLabel.Name = "downBlueLabel";
+            this.downBlueLabel.Size = new System.Drawing.Size(21, 24);
+            this.downBlueLabel.TabIndex = 3;
+            this.downBlueLabel.Text = "0";
+            // 
+            // topRedLabel
+            // 
+            this.topRedLabel.AutoSize = true;
+            this.topRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.topRedLabel.ForeColor = System.Drawing.Color.Red;
+            this.topRedLabel.Location = new System.Drawing.Point(437, 9);
+            this.topRedLabel.Name = "topRedLabel";
+            this.topRedLabel.Size = new System.Drawing.Size(21, 24);
+            this.topRedLabel.TabIndex = 4;
+            this.topRedLabel.Text = "0";
+            // 
+            // downRedLabel
+            // 
+            this.downRedLabel.AutoSize = true;
+            this.downRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.downRedLabel.ForeColor = System.Drawing.Color.Red;
+            this.downRedLabel.Location = new System.Drawing.Point(437, 417);
+            this.downRedLabel.Name = "downRedLabel";
+            this.downRedLabel.Size = new System.Drawing.Size(21, 24);
+            this.downRedLabel.TabIndex = 5;
+            this.downRedLabel.Text = "0";
+            // 
+            // leftBlueLabel
+            // 
+            this.leftBlueLabel.AutoSize = true;
+            this.leftBlueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.leftBlueLabel.ForeColor = System.Drawing.Color.Blue;
+            this.leftBlueLabel.Location = new System.Drawing.Point(12, 215);
+            this.leftBlueLabel.Name = "leftBlueLabel";
+            this.leftBlueLabel.Size = new System.Drawing.Size(21, 24);
+            this.leftBlueLabel.TabIndex = 6;
+            this.leftBlueLabel.Text = "0";
+            // 
+            // rightBlueLabel
+            // 
+            this.rightBlueLabel.AutoSize = true;
+            this.rightBlueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rightBlueLabel.ForeColor = System.Drawing.Color.Blue;
+            this.rightBlueLabel.Location = new System.Drawing.Point(767, 215);
+            this.rightBlueLabel.Name = "rightBlueLabel";
+            this.rightBlueLabel.Size = new System.Drawing.Size(21, 24);
+            this.rightBlueLabel.TabIndex = 7;
+            this.rightBlueLabel.Text = "0";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.downLabel);
-            this.Controls.Add(this.topLabel);
-            this.Controls.Add(this.rightLabel);
-            this.Controls.Add(this.leftLabel);
+            this.Controls.Add(this.rightBlueLabel);
+            this.Controls.Add(this.leftBlueLabel);
+            this.Controls.Add(this.downRedLabel);
+            this.Controls.Add(this.topRedLabel);
+            this.Controls.Add(this.downBlueLabel);
+            this.Controls.Add(this.topBlueLabel);
+            this.Controls.Add(this.rightRedLabel);
+            this.Controls.Add(this.leftRedLabel);
             this.Name = "MainForm";
             this.Text = "BillyardBalls";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,10 +157,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label leftLabel;
-        private System.Windows.Forms.Label rightLabel;
-        private System.Windows.Forms.Label topLabel;
-        private System.Windows.Forms.Label downLabel;
+        private System.Windows.Forms.Label leftRedLabel;
+        private System.Windows.Forms.Label rightRedLabel;
+        private System.Windows.Forms.Label topBlueLabel;
+        private System.Windows.Forms.Label downBlueLabel;
+        private System.Windows.Forms.Label topRedLabel;
+        private System.Windows.Forms.Label downRedLabel;
+        private System.Windows.Forms.Label leftBlueLabel;
+        private System.Windows.Forms.Label rightBlueLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

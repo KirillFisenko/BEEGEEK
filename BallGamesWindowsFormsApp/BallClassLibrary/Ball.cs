@@ -7,7 +7,7 @@ namespace BallClassLibrary
     public class Ball
     {
         protected Form form;
-        private Timer timer;
+        public Timer timer;
 
         protected int vx = 5;
         protected int vy = 5;
@@ -44,15 +44,15 @@ namespace BallClassLibrary
             timer.Stop();
         }
 
-        public void Show()
-        {            
+        public virtual void Show()
+        {
             Draw(brush);
         }
 
         protected virtual void Go()
         {
             centerX += vx;
-            centerY += vy;            
+            centerY += vy;
         }
 
         public void Clear()
@@ -84,6 +84,11 @@ namespace BallClassLibrary
         {
             return form.ClientSize.Height - radius;
         }
+
+        public int Center()
+        {
+            return form.ClientSize.Width / 2;
+        }       
 
         public bool BallOnBoard()
         {

@@ -27,6 +27,6 @@ namespace BallClassLibrary
             centerX = random.Next(LeftSide(), RightSide());
             centerY = random.Next(TopSide(), DownSide());
             brush = colors[random.Next(0, colors.Count)];
-        }        
+        }
     }
 }

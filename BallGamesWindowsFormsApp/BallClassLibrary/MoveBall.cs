@@ -21,7 +21,7 @@ namespace BallClassLibrary
             {
                 sign = -1;
             }
-            return random.Next(3, 5) * sign;
+            return random.Next(3, 8) * sign;
         }
     }    
 }
