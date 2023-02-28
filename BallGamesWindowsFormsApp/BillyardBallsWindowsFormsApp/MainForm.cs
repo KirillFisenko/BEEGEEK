@@ -34,9 +34,11 @@ namespace BillyardBallsWindowsFormsApp
             }
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {            
+        {
+            timer1.Start();
+
             foreach (var ball in Balls)
-            {                
+            {
                 ball.OnHited += Ball_OnHited;
                 ball.Start();
             }
@@ -71,7 +73,57 @@ namespace BillyardBallsWindowsFormsApp
                     downBlueLabel.Text = (Convert.ToInt32(downBlueLabel.Text) + 1).ToString();
                     break;
             }
-        }        
+        }
         
+        private bool EndOfMixBalls()
+        {
+            var blueBallsLeftCount = 0;
+            var blueBallsRightCount = 0;
+            var redBallsLeftCount = 0;
+            var redBallsRightCount = 0;
+
+            foreach (var ball in Balls)
+            {
+                if (ball.centerX < ball.Center())
+                {
+                    if (ball.brush == Brushes.Blue)
+                    {
+                        blueBallsLeftCount++;
+                    }
+                    if (ball.brush == Brushes.Red)
+                    {
+                        redBallsLeftCount++;
+                    }
+                }
+                if (ball.centerX > ball.Center())
+                {
+                    if (ball.brush == Brushes.Blue)
+                    {
+                        blueBallsRightCount++;
+                    }
+                    if (ball.brush == Brushes.Red)
+                    {
+                        redBallsRightCount++;
+                    }
+                }
+            }
+            if(blueBallsLeftCount == redBallsLeftCount && blueBallsRightCount == redBallsRightCount
+                && blueBallsLeftCount == blueBallsRightCount && redBallsLeftCount == redBallsRightCount)
+            {
+                return true;
+            }
+            return false;            
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {            
+            if (EndOfMixBalls())
+            {
+                timer1.Stop();
+                foreach (var ball in Balls)
+                {                    
+                    ball.Stop();
+                }                
+            }
+        }        
     }
 }

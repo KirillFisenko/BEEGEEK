@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BallClassLibrary
@@ -98,7 +94,8 @@ namespace BallClassLibrary
         public void DrawLine()
         {
             var graphics = form.CreateGraphics();
-            Pen blackPen = new Pen(Color.Black, 3);
+            Pen blackPen = new Pen(Color.Black, 5);
+            blackPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             int x1 = form.ClientSize.Width / 2;
             int y1 = 0;
             int x2 = form.ClientSize.Width / 2;

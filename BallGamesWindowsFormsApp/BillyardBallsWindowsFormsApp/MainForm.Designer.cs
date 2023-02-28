@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.leftRedLabel = new System.Windows.Forms.Label();
             this.rightRedLabel = new System.Windows.Forms.Label();
             this.topBlueLabel = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.downRedLabel = new System.Windows.Forms.Label();
             this.leftBlueLabel = new System.Windows.Forms.Label();
             this.rightBlueLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // leftRedLabel
@@ -87,7 +89,7 @@
             this.topRedLabel.AutoSize = true;
             this.topRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.topRedLabel.ForeColor = System.Drawing.Color.Red;
-            this.topRedLabel.Location = new System.Drawing.Point(442, 9);
+            this.topRedLabel.Location = new System.Drawing.Point(437, 9);
             this.topRedLabel.Name = "topRedLabel";
             this.topRedLabel.Size = new System.Drawing.Size(21, 24);
             this.topRedLabel.TabIndex = 4;
@@ -98,7 +100,7 @@
             this.downRedLabel.AutoSize = true;
             this.downRedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.downRedLabel.ForeColor = System.Drawing.Color.Red;
-            this.downRedLabel.Location = new System.Drawing.Point(442, 417);
+            this.downRedLabel.Location = new System.Drawing.Point(437, 417);
             this.downRedLabel.Name = "downRedLabel";
             this.downRedLabel.Size = new System.Drawing.Size(21, 24);
             this.downRedLabel.TabIndex = 5;
@@ -126,10 +128,15 @@
             this.rightBlueLabel.TabIndex = 7;
             this.rightBlueLabel.Text = "0";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rightBlueLabel);
             this.Controls.Add(this.leftBlueLabel);
@@ -158,6 +165,7 @@
         private System.Windows.Forms.Label downRedLabel;
         private System.Windows.Forms.Label leftBlueLabel;
         private System.Windows.Forms.Label rightBlueLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

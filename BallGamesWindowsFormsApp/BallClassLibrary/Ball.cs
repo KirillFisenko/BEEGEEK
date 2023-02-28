@@ -27,7 +27,7 @@ namespace BallClassLibrary
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Move();           
+            Move();
         }
         public bool IsMovable()
         {
@@ -45,14 +45,14 @@ namespace BallClassLibrary
         }
 
         public virtual void Show()
-        {            
+        {
             Draw(brush);
         }
 
         protected virtual void Go()
         {
             centerX += vx;
-            centerY += vy;            
+            centerY += vy;
         }
 
         public void Clear()
@@ -85,6 +85,11 @@ namespace BallClassLibrary
             return form.ClientSize.Height - radius;
         }
 
+        public int Center()
+        {
+            return form.ClientSize.Width / 2;
+        }       
+
         public bool BallOnBoard()
         {
             return centerX >= LeftSide() && centerX <= RightSide() && centerY >= TopSide() && centerY <= DownSide();
@@ -100,8 +105,8 @@ namespace BallClassLibrary
         private void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);            
-            graphics.FillEllipse(brush, rectangle);            
+            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+            graphics.FillEllipse(brush, rectangle);
         }
     }
 }
