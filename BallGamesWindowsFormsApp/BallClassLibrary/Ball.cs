@@ -7,7 +7,7 @@ namespace BallClassLibrary
     public class Ball
     {
         protected Form form;
-        private Timer timer;
+        public Timer timer;
 
         protected int vx = 5;
         protected int vy = 5;

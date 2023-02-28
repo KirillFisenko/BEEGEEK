@@ -104,8 +104,6 @@ namespace BallClassLibrary
             int x2 = form.ClientSize.Width / 2;
             int y2 = form.ClientSize.Height;
             graphics.DrawLine(blackPen, x1, y1, x2, y2);
-        }
-
-        
+        }        
     }
 } 

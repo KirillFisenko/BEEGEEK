@@ -34,11 +34,11 @@ namespace BillyardBallsWindowsFormsApp
             }
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
+        {            
             foreach (var ball in Balls)
-            {
+            {                
                 ball.OnHited += Ball_OnHited;
-                timer1.Enabled = !timer1.Enabled;
+                ball.Start();
             }
         }
         private void Ball_OnHited(object sender, HitEventArgs e)
@@ -71,15 +71,7 @@ namespace BillyardBallsWindowsFormsApp
                     downBlueLabel.Text = (Convert.ToInt32(downBlueLabel.Text) + 1).ToString();
                     break;
             }
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            foreach (var ball in Balls)
-            {
-                {
-                    ball.Start();
-                }
-            }
-        }
+        }        
+        
     }
 }
