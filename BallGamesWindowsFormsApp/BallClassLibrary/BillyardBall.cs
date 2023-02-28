@@ -13,7 +13,7 @@ namespace BallClassLibrary
         public event EventHandler<HitEventArgs> OnHited;
         public BillyardBall(Form form) : base(form)
         {
-            radius = 30;            
+            radius = 20;            
         }
 
         public void ChooseSide(string side)
@@ -38,26 +38,60 @@ namespace BallClassLibrary
         protected override void Go()
         {      
             base.Go();
-
-            if (centerX <= LeftSide())
+            
+            if(brush == Brushes.Blue)
             {
-                vx = -vx;
-                OnHited.Invoke(this, new HitEventArgs(Side.Left));
+                if (centerX <= LeftSide())
+                {
+                    centerX = LeftSide();
+                    vx = -vx;
+                    OnHited.Invoke(this, new HitEventArgs(Side.LeftBlue));
+                }
+                if (centerX >= RightSide())
+                {
+                    centerX = RightSide();
+                    vx = -vx;
+                    OnHited.Invoke(this, new HitEventArgs(Side.RightBlue));
+                }
+                if (centerY <= TopSide())
+                {
+                    centerY = TopSide();
+                    vy = -vy;
+                    OnHited.Invoke(this, new HitEventArgs(Side.TopBlue));
+                }
+                if (centerY >= DownSide())
+                {
+                    centerY = DownSide();
+                    vy = -vy;
+                    OnHited.Invoke(this, new HitEventArgs(Side.DownBlue));
+                }
             }
-            if (centerX >= RightSide())
+            if (brush == Brushes.Red)
             {
-                vx = -vx;
-                OnHited.Invoke(this, new HitEventArgs(Side.Right));
-            }
-            if (centerY <= TopSide())
-            {
-                vy = -vy;
-                OnHited.Invoke(this, new HitEventArgs(Side.Top));
-            }
-            if (centerY >= DownSide())
-            {
-                vy = -vy;
-                OnHited.Invoke(this, new HitEventArgs(Side.Down));
+                if (centerX <= LeftSide())
+                {
+                    centerX = LeftSide();
+                    vx = -vx;
+                    OnHited.Invoke(this, new HitEventArgs(Side.LeftRed));
+                }
+                if (centerX >= RightSide())
+                {
+                    centerX = RightSide();
+                    vx = -vx;
+                    OnHited.Invoke(this, new HitEventArgs(Side.RightRed));
+                }
+                if (centerY <= TopSide())
+                {
+                    centerY = TopSide();
+                    vy = -vy;
+                    OnHited.Invoke(this, new HitEventArgs(Side.TopRed));
+                }
+                if (centerY >= DownSide())
+                {
+                    centerY = DownSide();
+                    vy = -vy;
+                    OnHited.Invoke(this, new HitEventArgs(Side.DownRed));
+                }
             }
         }                
 

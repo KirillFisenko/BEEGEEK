@@ -8,7 +8,7 @@ namespace BillyardBallsWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        protected int quantityBalls = 10;
+        protected int quantityBalls = 20;
         protected List<BillyardBall> Balls;
         public MainForm()
         {
@@ -30,11 +30,7 @@ namespace BillyardBallsWindowsFormsApp
                     ball.ChooseSide("right");
                 }
                 Balls.Add(ball);                
-            }
-            foreach (var ball in Balls)
-            {                
-                ball.Show(); //должны показаться, но не двигаться
-            }
+            }            
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -48,16 +44,29 @@ namespace BillyardBallsWindowsFormsApp
         {
             switch (e.Side)
             {
-                case Side.Left:
+                case Side.LeftRed:
                     leftRedLabel.Text = (Convert.ToInt32(leftRedLabel.Text) + 1).ToString();
                     break;
-                case Side.Right:
+                case Side.RightRed:
                     rightRedLabel.Text = (Convert.ToInt32(rightRedLabel.Text) + 1).ToString();
                     break;
-                case Side.Top:
+                case Side.TopRed:
+                    topRedLabel.Text = (Convert.ToInt32(topRedLabel.Text) + 1).ToString();
+                    break;
+                case Side.DownRed:
+                    downRedLabel.Text = (Convert.ToInt32(downRedLabel.Text) + 1).ToString();
+                    break;
+
+                case Side.LeftBlue:
+                    leftBlueLabel.Text = (Convert.ToInt32(leftBlueLabel.Text) + 1).ToString();
+                    break;
+                case Side.RightBlue:
+                    rightBlueLabel.Text = (Convert.ToInt32(rightBlueLabel.Text) + 1).ToString();
+                    break;
+                case Side.TopBlue:
                     topBlueLabel.Text = (Convert.ToInt32(topBlueLabel.Text) + 1).ToString();
                     break;
-                case Side.Down:
+                case Side.DownBlue:
                     downBlueLabel.Text = (Convert.ToInt32(downBlueLabel.Text) + 1).ToString();
                     break;
             }
