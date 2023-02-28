@@ -39,7 +39,7 @@
             // 
             // stopBallButton
             // 
-            this.stopBallButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            //this.stopBallButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stopBallButton.ForeColor = System.Drawing.Color.Crimson;
             this.stopBallButton.Location = new System.Drawing.Point(12, 450);
             this.stopBallButton.Name = "stopBallButton";
@@ -51,7 +51,7 @@
             // 
             // drawRandomBallbutton
             // 
-            this.drawRandomBallbutton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            //this.drawRandomBallbutton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawRandomBallbutton.ForeColor = System.Drawing.Color.DarkCyan;
             this.drawRandomBallbutton.Location = new System.Drawing.Point(12, 12);
             this.drawRandomBallbutton.Name = "drawRandomBallbutton";
@@ -63,7 +63,7 @@
             // 
             // restartButton
             // 
-            this.restartButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            //this.restartButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.restartButton.ForeColor = System.Drawing.Color.ForestGreen;
             this.restartButton.Location = new System.Drawing.Point(667, 12);
             this.restartButton.Name = "restartButton";
@@ -75,7 +75,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            //this.exitButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitButton.ForeColor = System.Drawing.Color.Orange;
             this.exitButton.Location = new System.Drawing.Point(667, 450);
             this.exitButton.Name = "exitButton";
@@ -88,7 +88,7 @@
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
-            this.infoLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            //this.infoLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.infoLabel.ForeColor = System.Drawing.Color.BlueViolet;
             this.infoLabel.Location = new System.Drawing.Point(245, 26);
             this.infoLabel.Name = "infoLabel";

@@ -10,6 +10,7 @@ namespace BillyardBallsWindowsFormsApp
     {
         protected int quantityBalls = 20;
         protected List<BillyardBall> Balls;
+
         public MainForm()
         {
             InitializeComponent();
@@ -29,17 +30,16 @@ namespace BillyardBallsWindowsFormsApp
                 {
                     ball.ChooseSide("right");
                 }
-                Balls.Add(ball);                
-            }            
+                Balls.Add(ball);
+            }
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             foreach (var ball in Balls)
-            {                
+            {
                 ball.OnHited += Ball_OnHited;
-                ball.Start();
+                timer1.Enabled = !timer1.Enabled;
             }
-            timer1.Enabled = !timer1.Enabled;
         }
         private void Ball_OnHited(object sender, HitEventArgs e)
         {
@@ -70,6 +70,15 @@ namespace BillyardBallsWindowsFormsApp
                 case Side.DownBlue:
                     downBlueLabel.Text = (Convert.ToInt32(downBlueLabel.Text) + 1).ToString();
                     break;
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach (var ball in Balls)
+            {
+                {
+                    ball.Start();
+                }
             }
         }
     }
