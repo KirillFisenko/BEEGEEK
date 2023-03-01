@@ -1,18 +1,13 @@
 ﻿using BallClassLibrary;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalutWindowsFormsApp
 {
     public partial class MainForm : Form
     {
+        public VerticalBall verticalBall;
+        public Random random = new Random();        
         public MainForm()
         {
             InitializeComponent();
@@ -25,14 +20,30 @@ namespace SalutWindowsFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            var random = new Random();
-            var count = random.Next(1, 15);
+            timer1.Start();
+            var x = e.X;            
+
+            var verticalBall = new VerticalBall(this, x);
+            verticalBall.Start();           
             
+        }
+
+        private void MakeSalut(int count, float x, float y)
+        {
             for (var i = 0; i < count; i++)
             {
-                var salut = new SalutBall(this, e.X, e.Y);
+                var salut = new SalutBall(this, x, y);
                 salut.Start();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var count = random.Next(1, 15);
+            if (verticalBall.IsBallOnCenter())
+            {
+                MakeSalut(count, verticalBall.centerX, verticalBall.centerY);
+            }            
         }
     }
 }
