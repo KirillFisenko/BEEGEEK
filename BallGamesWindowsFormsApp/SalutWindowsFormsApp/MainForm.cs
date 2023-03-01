@@ -1,13 +1,17 @@
 ﻿using BallClassLibrary;
 using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace SalutWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        public VerticalBall verticalBall;
-        public Random random = new Random();        
+        public Random random = new Random();
+        protected List<Ball> Balls;
         public MainForm()
         {
             InitializeComponent();
@@ -15,36 +19,32 @@ namespace SalutWindowsFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            Balls = new List<Ball>();
+            timer1.Start();            
         }
 
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {            
-            var x = e.X;
-            verticalBall = new VerticalBall(this, x);            
-            verticalBall.Start();
-            timer1.Start();
-        }
-
-        private void MakeSalut(int count, float x, float y)
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < count; i++)
+            if (Balls != null)
             {
-                var salut = new SalutBall(this, x, y);
-                salut.Start();
+                foreach (var ball in Balls)
+                {
+                    if (ball.IsMovable() && ball.BallOnBoard() && ball.Exists(e.X, e.Y))
+                    {
+                        ball.Stop();
+                        ball.Clear();
+                    }
+                }
             }
-        }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            var count = random.Next(5, 20);
-            if (verticalBall.IsBallOnCenter())
-            {
-                verticalBall.Stop();
-                verticalBall.Clear();
-                MakeSalut(count, verticalBall.centerX, verticalBall.centerY);
-                timer1.Stop();
-            }            
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {            
+            var ball = new FruitBall(this);
+            Balls.Add(ball);
+            ball.Start();
+            timer1.Interval = random.Next(100, 1400);
+        }
+        
     }
 }

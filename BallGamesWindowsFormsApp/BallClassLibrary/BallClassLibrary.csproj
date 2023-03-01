@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Ball.cs" />
     <Compile Include="BillyardBall.cs" />
+    <Compile Include="FruitBall.cs" />
     <Compile Include="HitEventArgs.cs" />
     <Compile Include="MoveBall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
