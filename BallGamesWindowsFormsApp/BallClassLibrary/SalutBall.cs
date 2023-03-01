@@ -9,10 +9,10 @@ namespace BallClassLibrary
 {
     public class SalutBall : MoveBall
     {
-        private float g = 0.2f;
+        private float g = 0.15f;
         public SalutBall(Form form, float centerX, float centerY) : base(form)
         {
-            radius = 15;
+            radius = 12;
             this.centerX = centerX;
             this.centerY = centerY;
             vy = -Math.Abs(vy);

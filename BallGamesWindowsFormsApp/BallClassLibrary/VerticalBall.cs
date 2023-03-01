@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BallClassLibrary
@@ -11,6 +7,7 @@ namespace BallClassLibrary
     {
         public VerticalBall(Form form, int centerX) : base(form)
         {
+            radius = 24;
             this.centerX = centerX;
             centerY = DownSide();
             vx = 0;
@@ -18,10 +15,11 @@ namespace BallClassLibrary
         }
 
         public bool IsBallOnCenter()
-        {            
-            if (centerY < form.ClientSize.Height / 2)
+        {
+            var random = new Random();
+            if (centerY < random.Next(form.ClientSize.Height / 3, form.ClientSize.Height / 2))
             {
-                return true;                               
+                return true;
             }
             return false;
         }

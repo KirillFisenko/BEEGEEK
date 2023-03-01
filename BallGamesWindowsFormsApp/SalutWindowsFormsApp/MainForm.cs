@@ -19,13 +19,11 @@ namespace SalutWindowsFormsApp
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
+        {            
+            var x = e.X;
+            verticalBall = new VerticalBall(this, x);            
+            verticalBall.Start();
             timer1.Start();
-            var x = e.X;            
-
-            var verticalBall = new VerticalBall(this, x);
-            verticalBall.Start();           
-            
         }
 
         private void MakeSalut(int count, float x, float y)
@@ -39,10 +37,13 @@ namespace SalutWindowsFormsApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            var count = random.Next(1, 15);
+            var count = random.Next(5, 20);
             if (verticalBall.IsBallOnCenter())
             {
+                verticalBall.Stop();
+                verticalBall.Clear();
                 MakeSalut(count, verticalBall.centerX, verticalBall.centerY);
+                timer1.Stop();
             }            
         }
     }
