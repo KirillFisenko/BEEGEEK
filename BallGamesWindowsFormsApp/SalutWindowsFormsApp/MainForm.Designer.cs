@@ -49,7 +49,7 @@ namespace SalutWindowsFormsApp
             this.Name = "MainForm";
             this.Text = "Salut";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,6 @@
-﻿namespace FruitNinjaWindowsFormsApp
+﻿using BallClassLibrary;
+
+namespace FruitNinjaWindowsFormsApp
 {
     partial class MainForm
     {
@@ -56,17 +58,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Порезанных фруктов:";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(953, 923);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = NativeMethods.LoadCustomCursor(@"C:\Users\justi\source\repos\BEEGEEK\BallGamesWindowsFormsApp\BallClassLibrary\Cursors\cursor.cur");
             this.Name = "MainForm";
             this.Text = "Fruit";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,9 +15,8 @@ namespace BallClassLibrary
         }
 
         public bool IsBallOnCenter()
-        {
-            var random = new Random();
-            if (centerY < random.Next(form.ClientSize.Height / 3, form.ClientSize.Height / 2))
+        {            
+            if (centerY < form.ClientSize.Height / 2)
             {
                 return true;
             }
