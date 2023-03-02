@@ -11,15 +11,24 @@ namespace BallClassLibrary
 
         protected List<Brush> colors = new List<Brush>()
         { Brushes.Black,
-            Brushes.Brown,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Yellow,
+          Brushes.Brown,
           Brushes.Violet,
           Brushes.Green,
           Brushes.Blue,
           Brushes.Red,
-          Brushes.Yellow,
+          Brushes.DarkGreen,
           Brushes.Olive,
           Brushes.Pink,
           Brushes.Tomato,
+          Brushes.Orange,
           Brushes.Goldenrod };
 
         public RandomSizeAndPointBall(Form form) : base(form)
@@ -27,7 +36,7 @@ namespace BallClassLibrary
             radius = random.Next(10, 40);
             centerX = random.Next(LeftSide(), RightSide());
             centerY = random.Next(TopSide(), DownSide());
-            brush = colors[random.Next(1, colors.Count)];
+            brush = colors[random.Next(0, colors.Count)];
         }
     }
 }

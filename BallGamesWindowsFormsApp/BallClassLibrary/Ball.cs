@@ -9,8 +9,8 @@ namespace BallClassLibrary
         protected Form form;
         public Timer timer;
 
-        protected float vx = 5;
-        protected float vy = 5;
+        public float vx = 5;
+        public float vy = 5;
 
         public float centerX = 50;
         public float centerY = 50;

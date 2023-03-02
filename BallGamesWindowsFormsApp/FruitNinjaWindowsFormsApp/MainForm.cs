@@ -1,12 +1,7 @@
 ﻿using BallClassLibrary;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FruitNinjaWindowsFormsApp
@@ -14,7 +9,7 @@ namespace FruitNinjaWindowsFormsApp
     public partial class MainForm : Form
     {
         public Random random = new Random();
-        protected List<Ball> Balls;
+        protected List<FruitBall> Balls;
         public MainForm()
         {
             InitializeComponent();
@@ -22,7 +17,7 @@ namespace FruitNinjaWindowsFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Balls = new List<Ball>();
+            Balls = new List<FruitBall>();
             timer1.Start();
         }
 
@@ -31,21 +26,23 @@ namespace FruitNinjaWindowsFormsApp
             if (Balls != null)
             {
                 foreach (var ball in Balls)
-                {                    
+                {
                     if (ball.IsMovable() && ball.BallOnBoard() && ball.Exists(e.X, e.Y))
                     {
                         if (ball.brush == Brushes.Black)
                         {
-                            timer1.Stop();
-                            MessageBox.Show("Соприкосновение с бомбой, игра закончена");                            
+                            timer1.Stop();                            
+                            MessageBox.Show("Соприкосновение с бомбой, игра закончена");
                             Application.Restart();
                         }
-                        else
-                        {
-                            ball.Stop();
-                            ball.Clear();
-                            label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
-                        }                        
+                        if (ball.brush == Brushes.Yellow)
+                        {                            
+                            timer2.Start();
+                            
+                        }
+                        ball.Stop();
+                        ball.Clear();
+                        label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
                     }
                 }
             }
@@ -56,6 +53,29 @@ namespace FruitNinjaWindowsFormsApp
             Balls.Add(ball);
             ball.Start();
             timer1.Interval = random.Next(100, 1400);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
+            foreach (var ball in Balls)
+            {
+                ball.timer.Interval = 100;
+            }
+            
+            timer3.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            timer3.Interval = 5000;
+                        
+            foreach (var ball in Balls)
+            {
+                ball.timer.Interval = 20;
+            }
+            timer2.Stop();
+            timer3.Stop();
         }
     }
 }
