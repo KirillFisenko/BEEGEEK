@@ -10,7 +10,8 @@ namespace BallClassLibrary
         protected static Random random = new Random();
 
         protected List<Brush> colors = new List<Brush>()
-        { Brushes.Brown,
+        { Brushes.Black,
+            Brushes.Brown,
           Brushes.Violet,
           Brushes.Green,
           Brushes.Blue,
@@ -26,7 +27,7 @@ namespace BallClassLibrary
             radius = random.Next(10, 40);
             centerX = random.Next(LeftSide(), RightSide());
             centerY = random.Next(TopSide(), DownSide());
-            brush = colors[random.Next(0, colors.Count)];
+            brush = colors[random.Next(1, colors.Count)];
         }
     }
 }

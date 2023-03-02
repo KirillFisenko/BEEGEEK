@@ -31,12 +31,21 @@ namespace FruitNinjaWindowsFormsApp
             if (Balls != null)
             {
                 foreach (var ball in Balls)
-                {
+                {                    
                     if (ball.IsMovable() && ball.BallOnBoard() && ball.Exists(e.X, e.Y))
                     {
-                        ball.Stop();
-                        ball.Clear();
-                        label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
+                        if (ball.brush == Brushes.Black)
+                        {
+                            timer1.Stop();
+                            MessageBox.Show("Соприкосновение с бомбой, игра закончена");                            
+                            Application.Restart();
+                        }
+                        else
+                        {
+                            ball.Stop();
+                            ball.Clear();
+                            label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
+                        }                        
                     }
                 }
             }

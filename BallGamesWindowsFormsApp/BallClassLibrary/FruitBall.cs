@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace BallClassLibrary
 {
@@ -17,6 +12,7 @@ namespace BallClassLibrary
             centerX = random.Next(Center() - Center() / 2, Center() + Center() / 2);
             vx = (float)random.NextDouble() * 6 - 3;
             vy = random.Next(-16, -9);
+            brush = colors[random.Next(0, colors.Count)];
         }              
         
         protected override void Go()
