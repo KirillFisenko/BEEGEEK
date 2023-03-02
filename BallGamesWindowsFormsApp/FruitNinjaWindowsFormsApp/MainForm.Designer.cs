@@ -70,7 +70,7 @@ namespace FruitNinjaWindowsFormsApp
             this.ClientSize = new System.Drawing.Size(953, 923);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Cursor = NativeMethods.LoadCustomCursor(@"C:\Users\justi\source\repos\BEEGEEK\BallGamesWindowsFormsApp\BallClassLibrary\Cursors\cursor.cur");
+            //this.Cursor = NativeMethods.LoadCustomCursor(@"C:\Users\justi\source\repos\BEEGEEK\BallGamesWindowsFormsApp\BallClassLibrary\Cursors\cursor.cur");
             this.Name = "MainForm";
             this.Text = "Fruit";
             this.Load += new System.EventHandler(this.MainForm_Load);
