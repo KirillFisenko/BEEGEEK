@@ -1,9 +1,7 @@
 ﻿using BallClassLibrary;
 using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Timers;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SalutWindowsFormsApp
@@ -33,10 +31,10 @@ namespace SalutWindowsFormsApp
                     {
                         ball.Stop();
                         ball.Clear();
+                        label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
                     }
                 }
             }
-
         }
         private void timer1_Tick(object sender, EventArgs e)
         {            
@@ -44,7 +42,6 @@ namespace SalutWindowsFormsApp
             Balls.Add(ball);
             ball.Start();
             timer1.Interval = random.Next(100, 1400);
-        }
-        
+        }        
     }
 }
