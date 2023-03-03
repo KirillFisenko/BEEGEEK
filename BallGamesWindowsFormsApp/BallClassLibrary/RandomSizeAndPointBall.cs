@@ -11,14 +11,7 @@ namespace BallClassLibrary
 
         protected List<Brush> colors = new List<Brush>()
         { Brushes.Black,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
-          Brushes.Yellow,
+          Brushes.Yellow,          
           Brushes.Brown,
           Brushes.Violet,
           Brushes.Green,
