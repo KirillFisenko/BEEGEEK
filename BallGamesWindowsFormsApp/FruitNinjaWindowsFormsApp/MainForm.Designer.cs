@@ -70,6 +70,7 @@ namespace FruitNinjaWindowsFormsApp
             // 
             // timer3
             // 
+            this.timer3.Interval = 5000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // MainForm
@@ -80,7 +81,6 @@ namespace FruitNinjaWindowsFormsApp
             this.ClientSize = new System.Drawing.Size(953, 923);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Cursor = NativeMethods.LoadCustomCursor(@"C:\Users\justi\source\repos\BEEGEEK\BallGamesWindowsFormsApp\BallClassLibrary\Cursors\cursor.cur");
             this.Name = "MainForm";
             this.Text = "Fruit";
             this.Load += new System.EventHandler(this.MainForm_Load);
