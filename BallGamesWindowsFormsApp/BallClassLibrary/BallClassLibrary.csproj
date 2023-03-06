@@ -49,6 +49,7 @@
     <Compile Include="FruitBall.cs" />
     <Compile Include="HitEventArgs.cs" />
     <Compile Include="MoveBall.cs" />
+    <Compile Include="Pig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomSizeAndPointBall.cs" />
     <Compile Include="SalutBall.cs" />
