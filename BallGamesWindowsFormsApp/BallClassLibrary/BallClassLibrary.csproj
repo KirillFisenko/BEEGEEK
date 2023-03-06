@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Ball.cs" />
     <Compile Include="BillyardBall.cs" />
+    <Compile Include="Bird.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="FruitBall.cs" />
     <Compile Include="HitEventArgs.cs" />

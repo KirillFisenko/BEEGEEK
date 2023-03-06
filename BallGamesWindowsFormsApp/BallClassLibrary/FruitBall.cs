@@ -12,8 +12,8 @@ namespace BallClassLibrary
             centerX = random.Next(Center() - Center() / 2, Center() + Center() / 2);
             vx = (float)random.NextDouble() * 6 - 3;
             vy = random.Next(-16, -9);            
-        }              
-        
+        }
+
         protected override void Go()
         {
             base.Go();

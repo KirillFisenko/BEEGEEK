@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BallClassLibrary
-{   
+{
     public class Pig : Ball
     {
-        public Random random = new Random();
+        public static Random random = new Random();
         public Pig(Form form) : base(form)
         {
             radius = 50;
-            centerX = random.Next(Center(), RightSide());
-            centerY = random.Next(TopSide(), Center());
+            centerX = random.Next(Center() - 4*radius, RightSide() - 4*radius);
+            centerY = random.Next(TopSide() + 2*radius, 2*radius + form.ClientSize.Height / 2);
             brush = Brushes.Pink;
 
             this.form = form;
@@ -28,6 +28,13 @@ namespace BallClassLibrary
         private void Timer_Tick(object sender, EventArgs e)
         {
             Show();
+        }
+
+        public bool Exists(float pointX, float pointY)
+        {
+            var dx = pointX - centerX;
+            var dy = pointY - centerY;
+            return dx * dx + dy * dy <= radius * radius;
         }
     }
 }
