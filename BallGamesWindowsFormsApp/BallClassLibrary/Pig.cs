@@ -12,7 +12,7 @@ namespace BallClassLibrary
             radius = 50;
             centerX = random.Next(Center() - 4*radius, RightSide() - 4*radius);
             centerY = random.Next(TopSide() + 2*radius, 2*radius + form.ClientSize.Height / 2);
-            brush = Brushes.Pink;                       
+            brush = Brushes.Green;                       
         }             
     }
 }

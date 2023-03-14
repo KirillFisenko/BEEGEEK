@@ -25,8 +25,7 @@ namespace AngryBirdsWindowsFormsApp
 
             if (bird.Intersect(pig))
             {
-                CreateNewPig();
-                CreateNewBird();
+                CreateNewPig();                
                 label2.Text = (Convert.ToInt32(label2.Text) + 1).ToString();
             }
         }
@@ -40,15 +39,14 @@ namespace AngryBirdsWindowsFormsApp
         {
             label2.Text = "0";
             CreateNewBird();
-            CreateNewPig();            
+            CreateNewPig();
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {            
             bird.SetVelocity(e.X, e.Y);
             timer.Start();          
             bird.Start();            
-        }
-             
+        }             
 
         private void CreateNewBird()
         {

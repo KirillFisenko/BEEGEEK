@@ -50,15 +50,14 @@
             this.label2.ForeColor = System.Drawing.Color.LightSalmon;
             this.label2.Location = new System.Drawing.Point(197, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 25);
+            this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 1;
-            
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1206, 659);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
