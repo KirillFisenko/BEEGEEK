@@ -1,39 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace BallClassLibrary
 {
-    public class Bird : FruitBall
-    {        
+    public class Bird : Ball
+    {
+        private float g = 0.2f;
+        private float elastic = 0.5f;
         public Bird(Form form) : base(form)
         {
             radius = 40;
-            centerX = LeftSide() + radius;
-            centerY = DownSide() - radius;
-            brush = Brushes.Blue;
-            
+            centerX = LeftSide();
+            centerY = DownSide();
+            brush = Brushes.Blue;            
             g = 0.2f;
         }
 
         protected override void Go()
         {
             base.Go();
+            
             if (centerY > DownSide())
             {
                 vy = -vy;
-                if (vy < 0 && g < 0.8f)
-                {
-                    g = g + 0.2f;
-                }               
-
+                centerY = DownSide();
+                vy = vy * elastic;
+                vx = vx * elastic;
+            }            
+            if (vy < 0.1 && vx < 0.1)
+            {
+                Stop();
             }
-        }
-
+            vy += g;
+        }   
         
+        public void SetVelocity(int x, int y)
+        {
+            vx = (x - centerX) / 30;
+            vy = (y - centerY) / 30;
+        }
     }    
 }

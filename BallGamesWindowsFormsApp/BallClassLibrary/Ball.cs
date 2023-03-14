@@ -102,6 +102,13 @@ namespace BallClassLibrary
             return dx * dx + dy * dy <= radius * radius;
         }
 
+        public bool Intersect(Ball other)
+        {
+            var dx = centerX - other.centerX;
+            var dy = centerY - other.centerY;
+            return dx * dx + dy * dy <= Math.Pow(radius + other.radius, 2);
+        }
+
         private void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
