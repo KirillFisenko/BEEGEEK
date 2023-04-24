@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-
-
 namespace TestClassLibrary
-{    public class FileProvider
+{    
+    public class FileProvider
     {     
 
         public static void Save(string path, List<Triangle> value)
