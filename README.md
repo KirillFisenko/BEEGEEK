@@ -15,7 +15,7 @@
 - [Игры "Мячики"](https://github.com/KirillFisenko/BEEGEEK/tree/main/BallGamesWindowsFormsApp)  
   - Фейерверк
   - Ninja-Fruit
-  - Диффузия
+  - Диффузия-бильярд
   - Angry Birds
 
 ![image](https://github.com/KirillFisenko/BEEGEEK/assets/120630673/8dc3ccbb-2a1f-44fe-b534-ee8b9cfe949d)
